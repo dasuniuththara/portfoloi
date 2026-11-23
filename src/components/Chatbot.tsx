@@ -89,12 +89,12 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
       };
     }
 
-    // 2. AimPoint AI & Computer Vision
-    if (q.includes("aimpoint") || q.includes("aim") || q.includes("vision") || q.includes("target") || q.includes("yolo") || q.includes("tensorrt")) {
+    // 2. Aim Point AI & Computer Vision
+    if (q.includes("aimpoint") || q.includes("aim point") || q.includes("aim") || q.includes("basketball") || q.includes("pose") || q.includes("vision")) {
       return {
-        text: `**AimPoint AI** is a real-time computer vision & targeting pipeline engineered by Dasuni:\n• **Sub-15ms Edge Inference:** Runs at continuous 62+ FPS on 1080p video streams with TensorRT FP16 quantization.\n• **Kalman Reticle Locking:** Predicts target trajectory and maintains lock even through momentary frame occlusion.\n• **Multi-Object Centroid Tracking:** Integrates ByteTrack for robust ID persistence across high-velocity motion.\n• **Modular RTSP Pipeline:** Low-latency video frame acquisition with hardware decoding.`,
+        text: `**Aim Point AI** is Dasuni's B.Sc. (Hons) Software Engineering thesis project at KDU, supervised by Dr. Kaneeka Vidanage:\n• **Real-Time 33-Keypoint Pose Estimation:** Tracks basketball shooter kinematics (elbow, wrist, shoulder, knee dip, release arc) using MediaPipe.\n• **Sub-20ms Mistake Detection:** Uses LSTM neural networks to catch elbow flare, improper jump dip, and release angles in real time (60 FPS).\n• **Instant Audio-Visual Coaching:** Delivers immediate voice guidance (e.g., 'Tuck shooting elbow inward') right upon ball release.`,
         actionButton: {
-          label: "Inspect AimPoint AI Vision Prototype",
+          label: "Inspect Aim Point AI Prototype",
           actionType: "project",
           projectId: "aimpoint-ai"
         }

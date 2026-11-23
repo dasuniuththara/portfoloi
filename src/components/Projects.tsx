@@ -25,7 +25,7 @@ export default function Projects({ onOpenModal }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const categories = ["All", "Full-Stack", "Frontend", "Backend/API", "Mobile / Tools"];
+  const categories = ["All", "AI / ML", "Full-Stack", "Frontend", "Backend/API", "Mobile / Tools"];
 
   // Category counts
   const categoryCounts = useMemo(() => {

@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   tagline: string;
   description: string;
-  category: "Full-Stack" | "Frontend" | "Backend/API" | "Mobile / Tools";
+  category: "Full-Stack" | "Frontend" | "Backend/API" | "Mobile / Tools" | "AI / ML";
   tags: string[];
   githubUrl: string;
   demoUrl?: string;
@@ -80,11 +80,11 @@ export const portfolioConfig = {
   projects: [
     {
       id: "aimpoint-ai",
-      title: "AimPointAI: Real-Time Basketball Mistake Detection & Corrective Feedback",
+      title: "Aim Point AI — Real-Time Basketball Mistake Detection & Pose Feedback",
       tagline: "KDU Final Year Thesis: Deep learning & MediaPipe pose estimation for real-time sports biomechanics",
       description: "Final Year Thesis project for B.Sc. (Hons) in Software Engineering at General Sir John Kotelawala Defence University (KDU), supervised by Dr. Kaneeka Vidanage. An AI system that performs real-time markerless pose estimation on basketball shooters, calculates joint biomechanics (elbow flare, knee flexion, release angle), detects shooting form mistakes, and generates instant audio-visual corrective coaching feedback.",
-      category: "Mobile / Tools",
-      tags: ["FYP (KDU)", "Deep Learning", "MediaPipe Pose", "LSTM", "FastAPI", "React Native", "Sports Biomechanics", "Python"],
+      category: "AI / ML",
+      tags: ["Aim Point AI", "FYP (KDU)", "Deep Learning", "MediaPipe Pose", "LSTM", "FastAPI", "React Native", "Sports Biomechanics", "Python"],
       githubUrl: "https://github.com/dasuniuththara/portfoloi",
       demoUrl: undefined,
       featured: true,
