@@ -26,7 +26,7 @@ export interface SkillCategory {
 
 export const portfolioConfig = {
   personal: {
-    name: "Alex Dev", // User can easily replace this with their actual name
+    name: "Dasuni Uththara",
     title: "Full-Stack Software Engineer & Freelancer",
     badge: "Available for New Freelance Projects",
     location: "Global / Remote",
@@ -34,9 +34,9 @@ export const portfolioConfig = {
     yearsExperience: "3+",
     projectsCompleted: "20+",
     clientSatisfaction: "100%",
-    email: "your-email@example.com",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
+    email: "dasuni@example.com",
+    github: "https://github.com/dasuniuththara",
+    linkedin: "https://linkedin.com/in/dasuniuththara",
     twitter: "https://twitter.com",
     calendly: "https://calendly.com",
   },
