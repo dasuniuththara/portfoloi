@@ -31,13 +31,13 @@ export default function Hero({ onOpenFeatured }: HeroProps) {
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 hover:bg-cyan-900 transition-colors"
             >
               <Eye className="w-3.5 h-3.5 text-cyan-400" />
-              <span>6 High-Fidelity UI &amp; Hardware Prototypes</span>
+              <span>7 High-Fidelity UI, AI &amp; Hardware Prototypes</span>
             </a>
           </div>
 
           {/* Main Title */}
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight sm:leading-tight">
-            Building High-Impact Web Apps &amp; IoT Systems for the{" "}
+            Engineering MediLIS, AimPoint AI &amp; Intelligent Systems for the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
               Modern World
             </span>
@@ -99,9 +99,9 @@ export default function Hero({ onOpenFeatured }: HeroProps) {
             </div>
             <div className="flex flex-col">
               <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
-                6/6
+                7/7
               </span>
-              <span className="text-xs sm:text-sm text-slate-400 mt-1">Full UI &amp; IoT Prototypes</span>
+              <span className="text-xs sm:text-sm text-slate-400 mt-1">Full UI, AI &amp; IoT Prototypes</span>
             </div>
           </div>
         </div>

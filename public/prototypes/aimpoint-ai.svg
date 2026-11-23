@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="glowOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#bbBg)" stroke="#ea580c" stroke-width="2"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="50" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="28" cy="25" r="5" fill="#ef4444"/>
+  <circle cx="44" cy="25" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="25" r="5" fill="#10b981"/>
+  <text x="85" y="31" font-family="-apple-system, sans-serif" font-weight="900" font-size="15" fill="#f97316">
+    AIMPOINT AI <tspan fill="#fdba74">• Basketball Shooting Form &amp; Pose Biomechanics Analyzer</tspan>
+  </text>
+  <rect x="660" y="14" width="115" height="24" rx="12" fill="#ea580c" fill-opacity="0.2" stroke="#ea580c" stroke-width="1"/>
+  <text x="678" y="30" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#fed7aa">● Real-Time Pose</text>
+
+  <!-- Left: Pose Skeleton Video Feed Area -->
+  <rect x="25" y="70" width="460" height="405" rx="12" fill="#030712" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="35" y="80" width="440" height="340" rx="8" fill="#070d17"/>
+  
+  <!-- Basketball hoop outline in background -->
+  <line x1="390" y1="130" x2="440" y2="130" stroke="#f97316" stroke-width="3"/>
+  <rect x="440" y="100" width="8" height="60" fill="#cbd5e1"/>
+  <path d="M 395 130 L 405 160 L 425 160 L 435 130" fill="none" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="3 2"/>
+
+  <!-- Shooter Pose Skeleton (MediaPipe 33 Keypoints Model) -->
+  <!-- Head -->
+  <circle cx="230" cy="140" r="14" fill="#38bdf8" fill-opacity="0.3" stroke="#38bdf8" stroke-width="2"/>
+  
+  <!-- Torso & Spine -->
+  <line x1="230" y1="154" x2="230" y2="245" stroke="#38bdf8" stroke-width="3"/>
+  
+  <!-- Right Arm (Shooting Arm) -->
+  <line x1="230" y1="170" x2="260" y2="140" stroke="#f97316" stroke-width="3.5"/> <!-- Shoulder to Elbow -->
+  <line x1="260" y1="140" x2="250" y2="95" stroke="#f97316" stroke-width="3.5"/>  <!-- Elbow to Wrist -->
+  
+  <!-- Left Arm (Guide Arm) -->
+  <line x1="230" y1="170" x2="210" y2="150" stroke="#38bdf8" stroke-width="2.5"/>
+  <line x1="210" y1="150" x2="225" y2="115" stroke="#38bdf8" stroke-width="2.5"/>
+
+  <!-- Basketball held at set point -->
+  <circle cx="245" cy="85" r="18" fill="#ea580c" stroke="#fff" stroke-width="1.5"/>
+  <path d="M 230 85 Q 245 80, 260 85" fill="none" stroke="#000" stroke-width="1.5"/>
+  <line x1="245" y1="67" x2="245" y2="103" stroke="#000" stroke-width="1.5"/>
+
+  <!-- Legs & Knee Flexion -->
+  <!-- Hip to Knees -->
+  <line x1="230" y1="245" x2="245" y2="305" stroke="#38bdf8" stroke-width="3"/> <!-- Right thigh -->
+  <line x1="230" y1="245" x2="215" y2="305" stroke="#38bdf8" stroke-width="3"/> <!-- Left thigh -->
+  <!-- Knees to Ankles -->
+  <line x1="245" y1="305" x2="240" y2="375" stroke="#38bdf8" stroke-width="3"/> <!-- Right calf -->
+  <line x1="215" y1="305" x2="210" y2="375" stroke="#38bdf8" stroke-width="3"/> <!-- Left calf -->
+
+  <!-- Joint Keypoint Dots -->
+  <circle cx="230" cy="170" r="5" fill="#38bdf8"/> <!-- Neck/Shoulders -->
+  <circle cx="260" cy="140" r="6" fill="#f97316"/> <!-- Right Elbow -->
+  <circle cx="250" cy="95" r="5" fill="#f97316"/>  <!-- Right Wrist -->
+  <circle cx="230" cy="245" r="5" fill="#38bdf8"/> <!-- Hip -->
+  <circle cx="245" cy="305" r="5" fill="#10b981"/> <!-- Right Knee -->
+  <circle cx="215" cy="305" r="5" fill="#10b981"/> <!-- Left Knee -->
+  <circle cx="240" cy="375" r="4" fill="#38bdf8"/> <!-- Ankle -->
+  <circle cx="210" cy="375" r="4" fill="#38bdf8"/> <!-- Ankle -->
+
+  <!-- Biomechanical Angle Annotations -->
+  <!-- Elbow Flare Warning Callout -->
+  <rect x="280" y="125" width="150" height="26" rx="4" fill="#ef4444" fill-opacity="0.9"/>
+  <text x="290" y="142" font-family="monospace" font-size="10" font-weight="bold" fill="#ffffff">⚠ Elbow Angle: 78° (-12° Flare)</text>
+  <line x1="260" y1="140" x2="280" y2="138" stroke="#ef4444" stroke-width="2"/>
+
+  <!-- Knee Flexion Angle Annotation -->
+  <rect x="70" y="295" width="135" height="24" rx="4" fill="#10b981" fill-opacity="0.9"/>
+  <text x="78" y="311" font-family="monospace" font-size="10" font-weight="bold" fill="#ffffff">✔ Knee Flex: 122° (Good)</text>
+  <line x1="215" y1="305" x2="205" y2="305" stroke="#10b981" stroke-width="2"/>
+
+  <!-- Release Angle Prediction arc -->
+  <path d="M 245 70 Q 320 20, 395 130" fill="none" stroke="#f97316" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="310" y="45" font-family="monospace" font-size="11" font-weight="bold" fill="#fdba74">Entry Arc: 51.4°</text>
+
+  <!-- Bottom video HUD stats -->
+  <rect x="35" y="430" width="440" height="35" rx="6" fill="#0b1329" stroke="#1e293b"/>
+  <text x="50" y="452" font-family="monospace" font-size="11" fill="#38bdf8">INFERENCE: 16.2ms • 60 FPS • MediaPipe Pose + LSTM • KDU FYP Research</text>
+
+  <!-- Right: Corrective Feedback & Mistake Detection Dashboard -->
+  <rect x="500" y="70" width="275" height="405" rx="12" fill="#080f21" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="515" y="98" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13" fill="#ffffff">AI Mistake Detection &amp; Feedback</text>
+
+  <!-- Mistake Alert 1 -->
+  <rect x="515" y="115" width="245" height="85" rx="8" fill="#1f1315" stroke="#ef4444" stroke-width="1"/>
+  <text x="525" y="136" font-family="-apple-system, sans-serif" font-weight="bold" font-size="11" fill="#f87171">DETECTED MISTAKE: ELBOW FLARE</text>
+  <text x="525" y="155" font-family="-apple-system, sans-serif" font-size="10" fill="#fca5a5">Right elbow drifts outward by 12°.</text>
+  <text x="525" y="172" font-family="-apple-system, sans-serif" font-weight="600" font-size="10" fill="#38bdf8">Coaching: Tuck shooting elbow under ball.</text>
+  <text x="525" y="188" font-family="monospace" font-size="9" fill="#94a3b8">Confidence: 94.8% • Timestamp: 00:02.14</text>
+
+  <!-- Correct Form Metric 2 -->
+  <rect x="515" y="210" width="245" height="75" rx="8" fill="#061a14" stroke="#10b981" stroke-width="1"/>
+  <text x="525" y="231" font-family="-apple-system, sans-serif" font-weight="bold" font-size="11" fill="#34d399">KNEE DIP &amp; POWER TRANSFER: EXCELLENT</text>
+  <text x="525" y="250" font-family="-apple-system, sans-serif" font-size="10" fill="#a7f3d0">Synchronized jump release with optimal 122° flexion.</text>
+  <text x="525" y="268" font-family="monospace" font-size="9" fill="#6ee7b7">Power Transfer Efficiency: 91%</text>
+
+  <!-- Overall Shot Form Score -->
+  <rect x="515" y="295" width="245" height="60" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="525" y="316" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">OVERALL SHOOTING FORM SCORE</text>
+  <text x="525" y="342" font-family="-apple-system, sans-serif" font-weight="extrabold" font-size="22" fill="#f97316">84 / 100 [B+]</text>
+
+  <!-- Real-time Voice Audio Cue banner -->
+  <rect x="515" y="365" width="245" height="95" rx="8" fill="#071a2e" stroke="#0284c7"/>
+  <text x="525" y="388" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">🔊 Audio-Visual Feedback System:</text>
+  <text x="525" y="408" font-family="-apple-system, sans-serif" font-size="10" fill="#e0f2fe">&quot;Keep your elbow tucked inward toward the rim on your release.&quot;</text>
+  <text x="525" y="438" font-family="monospace" font-size="9" fill="#7dd3fc">Generated in 18ms via Text-to-Speech Engine</text>
+</svg>

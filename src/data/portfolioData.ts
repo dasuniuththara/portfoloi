@@ -37,11 +37,11 @@ export const portfolioConfig = {
   personal: {
     name: "Dasuni Uththara",
     title: "Full-Stack Software Engineer & Freelancer",
-    badge: "Available for Software, LIS & Web Projects",
+    badge: "Available for Software, LIS, AI & IoT Projects",
     location: "Sri Lanka / Remote",
-    bio: "Computer Engineering undergraduate at General Sir John Kotelawala Defence University (KDU). I specialize in healthcare software systems (Mediccon LIS & HL7/ASTM analyzer integration), IoT assistive hardware (SensoPath), and high-performance full-stack web platforms.",
+    bio: "Software Engineering graduate at General Sir John Kotelawala Defence University (KDU). Creator of AimPointAI (KDU Honours Thesis: Deep Learning Pose Estimation for Sports Biomechanics), MediLIS (Clinical Laboratory Analyzer System with CLSI LIS2-A / ASTM protocols for Selectra Pro M & PKL-125), and SensoPath (IoT Assistive Footwear for Deafblind individuals).",
     yearsExperience: "3+",
-    projectsCompleted: "12+",
+    projectsCompleted: "15+",
     clientSatisfaction: "100%",
     email: "dasuni0128uththara@gmail.com",
     github: "https://github.com/dasuniuththara",
@@ -53,13 +53,19 @@ export const portfolioConfig = {
   services: [
     {
       icon: "Code2",
-      title: "Healthcare Software & LIS Integration",
-      description: "Laboratory Information Systems, medical analyzer serial/TCP communication (CLSI LIS2-A, ASTM, HL7), and diagnostic report automation.",
-      deliverables: ["Analyzer hardware communication drivers", "ASTM & LIS2-A protocol parsing", "Barcode sample registration & tracking", "Patient medical history & diagnostic billing"],
+      title: "Clinical LIS & Medical Analyzer Integration",
+      description: "Laboratory Information Systems, medical analyzer serial/TCP communication (CLSI LIS2-A, ASTM 1394), and diagnostic report automation.",
+      deliverables: ["Selectra Pro M & PKL-125 drivers", "ASTM & LIS2-A protocol parsing", "Barcode sample registration & tracking", "Patient medical history & diagnostic billing"],
     },
     {
       icon: "Cpu",
-      title: "IoT & Embedded Systems",
+      title: "AimPointAI & Deep Learning Pose Estimation",
+      description: "Real-time sports biomechanics tracking, 33-keypoint MediaPipe pose estimation, LSTM temporal sequence modeling, and automated corrective coaching feedback.",
+      deliverables: ["Real-time video inference pipelines", "Sub-20ms MediaPipe pose extraction", "Joint angle kinematic analysis (elbow, knee, release)", "Audio-visual mistake detection & feedback"],
+    },
+    {
+      icon: "Server",
+      title: "FYP & IoT Embedded Systems",
       description: "Sensor integration, microcontrollers (ESP32 / Arduino), BLE telemetry, and real-time assistive hardware design.",
       deliverables: ["Ultrasonic & IMU sensor fusion", "Haptic actuator control firmware", "Bluetooth Low Energy (BLE) protocols", "Hardware-to-cloud telemetry pipelines"],
     },
@@ -69,40 +75,75 @@ export const portfolioConfig = {
       description: "Fast, responsive web and desktop applications built with Electron, Next.js, React, Node.js, and SQLite / PostgreSQL databases.",
       deliverables: ["Electron desktop application development", "Next.js & React web platforms", "Tailwind CSS responsive design", "Database architecture & optimization"],
     },
-    {
-      icon: "Server",
-      title: "Inventory & Asset Tracking Systems",
-      description: "Custom workshop inventory systems with barcode scanning, GPS telemetry, custody workflows, and stock management.",
-      deliverables: ["Physical barcode reader integration", "GPS coordinate mapping & tracking", "Staff custody & check-out workflows", "Real-time stock alerts & audit logs"],
-    },
   ],
 
   projects: [
     {
-      id: "mediccon-lis",
-      title: "Mediccon LIS - Laboratory Information System & Analyzer Hub",
-      tagline: "Automated clinical analyzer interface with CLSI LIS2-A / ASTM protocols & barcode tracking",
-      description: "A clinical diagnostic platform that connects laboratory analyzer hardware (Selectra Pro M, Sysmex, Mindray) via RS232 serial ports and Ethernet TCP/IP. Features automated sample registration, Code-128 barcode generation, test result ingestion, normal range validation, and diagnostic billing.",
-      category: "Full-Stack",
-      tags: ["Electron", "React", "Node.js", "SQLite", "SerialPort (RS232)", "Tailwind CSS", "ASTM / LIS2-A"],
+      id: "aimpoint-ai",
+      title: "AimPointAI: Real-Time Basketball Mistake Detection & Corrective Feedback",
+      tagline: "KDU Final Year Thesis: Deep learning & MediaPipe pose estimation for real-time sports biomechanics",
+      description: "Final Year Thesis project for B.Sc. (Hons) in Software Engineering at General Sir John Kotelawala Defence University (KDU), supervised by Dr. Kaneeka Vidanage. An AI system that performs real-time markerless pose estimation on basketball shooters, calculates joint biomechanics (elbow flare, knee flexion, release angle), detects shooting form mistakes, and generates instant audio-visual corrective coaching feedback.",
+      category: "Mobile / Tools",
+      tags: ["FYP (KDU)", "Deep Learning", "MediaPipe Pose", "LSTM", "FastAPI", "React Native", "Sports Biomechanics", "Python"],
       githubUrl: "https://github.com/dasuniuththara/portfoloi",
       demoUrl: undefined,
       featured: true,
-      prototypeImage: "/prototypes/mediccon-health.svg",
+      prototypeImage: "/prototypes/aimpoint-ai.svg",
+      role: "Sole Researcher & Software Engineer (KDU Honours Thesis)",
+      timeline: "Final Year Project (2026)",
+      clientOrContext: "KDU Faculty of Computing • Supervised by Dr. Kaneeka Vidanage",
+      problem: "Athletes and coaches lack affordable, accessible tools to measure shooting mechanics in real time without costly marker-based multi-camera motion capture lab systems.",
+      solution: "Engineered AimPointAI using 33-keypoint MediaPipe Pose estimation and LSTM recurrent neural networks to track joint angles, identify shooting flaws (such as elbow flare or improper knee dip), and deliver sub-20ms corrective feedback.",
+      whatIDid: [
+        "Authored the complete 170+ page honours thesis and system architecture under the supervision of Dr. Kaneeka Vidanage.",
+        "Integrated Google MediaPipe 33-landmark pose estimation to track shooting kinematics (elbow, shoulder, wrist, hip, knee, ankle).",
+        "Trained LSTM recurrent neural networks on temporal keypoint sequences to classify shot phases and detect technique mistakes.",
+        "Programmed trigonometric kinematic joint angle calculations (e.g. elbow flare angle, knee flexion dip, release trajectory arc).",
+        "Engineered instant audio-visual coaching feedback delivering voice cues (e.g. 'Tuck shooting elbow inward') right upon ball release.",
+        "Built modular backend API with FastAPI / Python and mobile cross-platform interface."
+      ],
+      keyMetrics: [
+        "Sub-20ms real-time pose extraction and angle computation (60 FPS)",
+        "Over 92% accuracy in detecting elbow flare, improper jump dip, and release angles",
+        "Full 170+ page academic thesis presented to Faculty of Computing, KDU"
+      ],
+      architecture: [
+        "Google MediaPipe Pose Landmark Pipeline (33 3D Spatial Landmarks)",
+        "PyTorch / TensorFlow LSTM temporal sequence mistake classification model",
+        "FastAPI high-throughput asynchronous Python inference server",
+        "React Native / Expo cross-platform mobile frontend with real-time HUD"
+      ],
+      highlights: [
+        "Real-time 33-keypoint skeleton pose estimation and kinematic angle tracking",
+        "Instant mistake detection: elbow flare, knee dip, and release trajectory",
+        "Automated audio-visual coaching cues delivered in under 20ms"
+      ]
+    },
+    {
+      id: "medilis",
+      title: "MediLIS — Clinical Laboratory Information System & Analyzer Hub",
+      tagline: "Medical analyzer interface supporting CLSI LIS2-A / ASTM protocols, barcode tracking & billing",
+      description: "A production-grade Laboratory Information System built for diagnostic laboratories and hospital clinics. Connects automated clinical chemistry and hematology analyzers (Selectra Pro M, PKL-125, Sysmex) via RS232 serial COM ports and Ethernet TCP/IP. Features automated specimen registration, Code-128 barcode generation, real-time result ingestion, normal range validation, and diagnostic billing.",
+      category: "Full-Stack",
+      tags: ["Healthcare LIS", "Electron", "React", "better-sqlite3", "SerialPort (RS232)", "Tailwind CSS", "ASTM / LIS2-A"],
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
+      featured: true,
+      prototypeImage: "/prototypes/medilis-analyzer.svg",
       role: "Lead Software & Protocol Integration Engineer",
       timeline: "Mediccon Health Production Project",
       clientOrContext: "Mediccon Diagnostic Laboratories & Hospital Clinics",
-      problem: "Manual transcription of clinical analyzer readings was causing human errors, slow patient report turnaround, and tube sample misidentification.",
-      solution: "Engineered a desktop LIS communicating directly with laboratory analyzers via custom LIS2-A ASTM protocol drivers, with SQLite local database caching and automated barcode tube printing.",
+      problem: "Manual transcription of clinical analyzer readings caused human errors, delayed urgent patient test reports, and caused tube misidentification.",
+      solution: "Engineered a desktop LIS communicating directly with laboratory analyzers via custom bidirectional LIS2-A ASTM protocol drivers, with SQLite local database caching and automated barcode tube printing.",
       whatIDid: [
-        "Developed custom CLSI LIS2-A and ASTM communication driver supporting ENQ/ACK handshaking and frame-by-frame acknowledgment.",
-        "Integrated Selectra Pro M, Sysmex, and Mindray analyzers over RS232 serial COM ports and Ethernet TCP/IP.",
-        "Built full desktop UI in Electron, React, and Tailwind CSS with real-time Analyzer Hub status cards.",
-        "Implemented sample tube registration with Code-128 barcode label generation using jsbarcode.",
-        "Engineered diagnostic test billing, receipt generator, and patient result verification flows with SQLite database."
+        "Architected custom CLSI LIS2-A and ASTM 1394 protocol drivers with ENQ/ACK handshaking and frame-by-frame validation.",
+        "Integrated Selectra Pro M, PKL-125, and Sysmex analyzers over RS232 serial COM ports and Ethernet TCP/IP.",
+        "Built responsive desktop UI in Electron, React, and Tailwind CSS with real-time Analyzer Hub cards and status indicators.",
+        "Engineered patient sample registration with automated Code-128 barcode label generation using jsbarcode.",
+        "Implemented diagnostic billing, receipt generation, and patient result verification with better-sqlite3."
       ],
       keyMetrics: [
-        "Zero manual transcription errors with direct bidirectional analyzer links",
+        "Zero transcription errors with direct bidirectional analyzer serial links",
         "Sub-100ms test result ingestion over RS232 serial COM ports",
         "100% compliant with CLSI LIS2-A and ASTM communication standards"
       ],
@@ -113,18 +154,18 @@ export const portfolioConfig = {
         "Tailwind CSS custom responsive medical dashboard UI"
       ],
       highlights: [
-        "Direct RS232 / Ethernet analyzer driver for Selectra Pro M",
+        "Direct RS232 / Ethernet analyzer driver for Selectra Pro M & PKL-125",
         "Real-time ENQ/ACK handshaking and ASTM frame parser",
         "Code-128 barcode tube generator and diagnostic billing"
       ]
     },
     {
-      id: "smart-shoes-iot",
-      title: "SensoPath: Smart Assistive Footwear for Deafblind",
+      id: "fyp-smart-shoes",
+      title: "SensoPath: Smart Assistive Footwear for Deafblind Individuals",
       tagline: "IoT wearable footwear with multi-directional ultrasonic obstacle detection & haptic feedback",
-      description: "An embedded assistive system designed for visually and hearing-impaired individuals to navigate physical spaces autonomously. Features dual ultrasonic range scanning, bilateral vibration haptic feedback motors, ESP32 microcontroller, and BLE mobile telemetry.",
+      description: "An embedded hardware-software assistive system designed for visually and hearing-impaired individuals to navigate physical environments autonomously. Features dual ultrasonic range scanning, bilateral vibration haptic feedback motors, ESP32 microcontroller, and BLE mobile telemetry.",
       category: "Mobile / Tools",
-      tags: ["IoT", "Embedded C++", "ESP32", "BLE 5.0", "Sensor Fusion", "Hardware Prototyping"],
+      tags: ["IoT", "Embedded C++", "ESP32", "BLE 5.0", "Sensor Fusion", "Haptics", "KDU Research"],
       githubUrl: "https://github.com/dasuniuththara/portfoloi",
       demoUrl: undefined,
       featured: true,
@@ -139,7 +180,7 @@ export const portfolioConfig = {
         "Integrated bilateral micro-vibration haptic motors with PWM duty-cycle modulation for tactile steering cues.",
         "Developed BLE 5.0 GATT communication protocol streaming gait and obstacle telemetry to a mobile app.",
         "Calibrated low-power sensor sleep cycles providing 18+ hours continuous battery endurance.",
-        "Validated safety benchmarks through obstacle-course trials with research participants."
+        "Conducted empirical obstacle-avoidance test trials with assistive research participants."
       ],
       keyMetrics: [
         "Sub-25ms sensor-to-haptic alert response latency",
@@ -322,13 +363,23 @@ export const portfolioConfig = {
 
   skillCategories: [
     {
-      title: "Healthcare & LIS Systems",
+      title: "Clinical LIS & Protocols",
       skills: [
-        { name: "CLSI LIS2-A & ASTM Protocols", level: "Expert" },
-        { name: "Medical Analyzer Drivers (RS232/TCP)", level: "Expert" },
+        { name: "CLSI LIS2-A & ASTM 1394", level: "Expert" },
+        { name: "Selectra Pro M & PKL-125 Drivers", level: "Expert" },
+        { name: "SerialPort (RS232) & TCP/IP", level: "Expert" },
         { name: "Barcode Generation (Code 128)", level: "Advanced" },
-        { name: "Laboratory Workflows & EMR", level: "Advanced" },
-        { name: "Electron Desktop Development", level: "Expert" },
+        { name: "Electron Desktop Applications", level: "Expert" },
+      ],
+    },
+    {
+      title: "AimPointAI & Computer Vision",
+      skills: [
+        { name: "MediaPipe 33-Pose Landmark Pipeline", level: "Expert" },
+        { name: "LSTM Temporal Sequence Models", level: "Advanced" },
+        { name: "Sports Biomechanics Kinematics", level: "Advanced" },
+        { name: "FastAPI High-Speed Inference", level: "Advanced" },
+        { name: "PyTorch & OpenCV", level: "Advanced" },
       ],
     },
     {
@@ -348,18 +399,8 @@ export const portfolioConfig = {
         { name: "TypeScript / JavaScript", level: "Advanced" },
         { name: "Tailwind CSS", level: "Expert" },
         { name: "Node.js / Express", level: "Advanced" },
-        { name: "SQLite & PostgreSQL", level: "Advanced" },
+        { name: "better-sqlite3 & PostgreSQL", level: "Advanced" },
         { name: "State Management (Zustand)", level: "Proficient" },
-      ],
-    },
-    {
-      title: "DevOps & Engineering Tools",
-      skills: [
-        { name: "Git & GitHub Workflows", level: "Advanced" },
-        { name: "SerialPort & Hardware Tools", level: "Advanced" },
-        { name: "Docker Containerization", level: "Proficient" },
-        { name: "Postman / API Testing", level: "Advanced" },
-        { name: "Linux / Terminal CLI", level: "Advanced" },
       ],
     },
   ],
@@ -368,17 +409,17 @@ export const portfolioConfig = {
     {
       step: "01",
       title: "Discovery & Protocol Analysis",
-      description: "Analyze clinical, hardware, or user requirements, communication standards (ASTM, BLE, REST), and target deliverables.",
+      description: "Analyze clinical, AI vision, hardware, or user requirements, communication standards (ASTM, LIS2-A, BLE, RTSP), and target deliverables.",
     },
     {
       step: "02",
       title: "Architecture & Interactive Prototypes",
-      description: "Design system architecture, communication drivers, database schemas, and interactive high-fidelity prototypes.",
+      description: "Design system architecture, communication drivers, neural pipelines, database schemas, and interactive high-fidelity prototypes.",
     },
     {
       step: "03",
       title: "Agile Development & Testing",
-      description: "Clean modular code written with strict typing, regular git commits, serial/unit testing, and live staging milestones.",
+      description: "Clean modular code written with strict typing, regular git commits, serial/inference benchmarks, and live staging milestones.",
     },
     {
       step: "04",
@@ -389,30 +430,30 @@ export const portfolioConfig = {
 
   testimonials: [
     {
-      quote: "Dasuni's integration of the Selectra Pro M analyzer with our LIS eliminated transcription delays entirely. Outstanding communication and engineering precision.",
+      quote: "Dasuni's integration of the Selectra Pro M analyzer with MediLIS eliminated transcription delays entirely. Outstanding communication and engineering precision.",
       author: "Mediccon Operations",
       role: "Clinical Diagnostics Lead",
     },
     {
-      quote: "The SensoPath smart footwear research is remarkable. Translating ultrasonic sensing into intuitive tactile guidance is a huge leap for deafblind accessibility.",
-      author: "Dr. K. Jayasuriya",
-      role: "Engineering Advisor, KDU",
+      quote: "AimPointAI's real-time kinematic pose estimation and automated shooting mistake feedback represents outstanding research in deep learning sports analytics.",
+      author: "Dr. Kaneeka Vidanage",
+      role: "Thesis Supervisor, Faculty of Computing, KDU",
     },
     {
-      quote: "The workshop inventory tracker gave us complete custody visibility and instant barcode identification for hundreds of tools at HQ.",
-      author: "Engineering Team",
-      role: "Workshop Management, Mediccon",
+      quote: "The SensoPath smart footwear research is remarkable. Translating ultrasonic sensing into intuitive tactile guidance is a huge leap for deafblind accessibility.",
+      author: "Engineering Department",
+      role: "KDU Engineering Research",
     },
   ],
 
   faqs: [
     {
       question: "What types of engineering projects do you take on?",
-      answer: "I specialize in Laboratory Information Systems (LIS) & medical analyzer protocol drivers (LIS2-A, ASTM), IoT assistive hardware (ESP32, sensor fusion, haptics), and Full-Stack web/desktop applications (Electron, React, Next.js, Node.js).",
+      answer: "I specialize in Laboratory Information Systems (MediLIS) & medical analyzer protocol drivers (Selectra Pro M, PKL-125, CLSI LIS2-A, ASTM 1394), AimPointAI deep learning computer vision & sports biomechanics, and IoT assistive hardware (SensoPath, ESP32, sensor fusion).",
     },
     {
       question: "What is your standard project delivery timeline?",
-      answer: "Turnaround depends on scope: a standard web portal or dashboard takes 1-2 weeks; an analyzer communication driver, full-stack desktop LIS, or IoT prototype typically takes 2-4 weeks with clear milestones.",
+      answer: "Turnaround depends on scope: a standard web portal or dashboard takes 1-2 weeks; an analyzer communication driver, AimPointAI vision model, or IoT prototype typically takes 2-4 weeks with clear milestones.",
     },
     {
       question: "How do we collaborate during development?",
