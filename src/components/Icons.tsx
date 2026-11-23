@@ -3,6 +3,8 @@ import React from "react";
 export function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg
+      width="20"
+      height="20"
       className={className}
       viewBox="0 0 24 24"
       fill="none"
@@ -20,6 +22,8 @@ export function GithubIcon({ className = "w-5 h-5" }: { className?: string }) {
 export function LinkedinIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg
+      width="20"
+      height="20"
       className={className}
       viewBox="0 0 24 24"
       fill="none"
@@ -38,6 +42,8 @@ export function LinkedinIcon({ className = "w-5 h-5" }: { className?: string }) 
 export function TwitterIcon({ className = "w-5 h-5" }: { className?: string }) {
   return (
     <svg
+      width="20"
+      height="20"
       className={className}
       viewBox="0 0 24 24"
       fill="none"
