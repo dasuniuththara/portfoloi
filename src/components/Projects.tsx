@@ -25,13 +25,29 @@ export default function Projects({ onOpenModal }: ProjectsProps) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const categories = ["All", "AI / ML", "Full-Stack", "Frontend", "Backend/API", "Mobile / Tools"];
+  const categories = [
+    "All",
+    "🎓 FYP & Research",
+    "AI / ML",
+    "Full-Stack",
+    "Frontend",
+    "Backend/API",
+    "Mobile / Tools"
+  ];
+
+  const isFYP = (p: Project) =>
+    p.category === "FYP & Research" ||
+    p.tags.some((t) => t.toLowerCase().includes("fyp")) ||
+    p.id.toLowerCase().includes("fyp") ||
+    p.title.toLowerCase().includes("fyp");
 
   // Category counts
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { All: projects.length };
     categories.forEach((cat) => {
-      if (cat !== "All") {
+      if (cat === "🎓 FYP & Research") {
+        counts[cat] = projects.filter(isFYP).length;
+      } else if (cat !== "All") {
         counts[cat] = projects.filter((p) => p.category === cat).length;
       }
     });
@@ -41,8 +57,15 @@ export default function Projects({ onOpenModal }: ProjectsProps) {
   // Filtered and searched projects
   const filteredProjects = useMemo(() => {
     return projects.filter((p) => {
-      const matchesCategory =
-        selectedCategory === "All" || p.category === selectedCategory;
+      let matchesCategory = false;
+      if (selectedCategory === "All") {
+        matchesCategory = true;
+      } else if (selectedCategory === "🎓 FYP & Research") {
+        matchesCategory = isFYP(p);
+      } else {
+        matchesCategory = p.category === selectedCategory;
+      }
+
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch =
         !q ||
@@ -98,6 +121,33 @@ export default function Projects({ onOpenModal }: ProjectsProps) {
           </div>
         </div>
 
+        {/* FYP Dedicated Quick Banner */}
+        <div className="mb-8 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-cyan-950/90 via-indigo-950/70 to-purple-950/90 border border-cyan-500/40 shadow-lg shadow-cyan-950/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-300 font-bold text-xl shrink-0">
+              🎓
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold uppercase tracking-wider text-cyan-400">General Sir John Kotelawala Defence University (KDU)</span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-900/60 text-cyan-200 border border-cyan-700/60">Final Year Projects (FYP)</span>
+              </div>
+              <p className="text-sm font-semibold text-white mt-0.5">
+                Piano Playing Robot (Reg: D_BCE_22_0022), AimPoint AI &amp; SensoPath Assistive Footwear
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              setSelectedCategory("🎓 FYP & Research");
+              setSearchQuery("");
+            }}
+            className="px-4 py-2 rounded-xl text-xs font-bold text-slate-950 bg-gradient-to-r from-cyan-400 to-sky-300 hover:from-cyan-300 hover:to-sky-200 shadow-md shadow-cyan-500/20 transition-all shrink-0 self-end sm:self-auto cursor-pointer"
+          >
+            View FYP Projects ({projects.filter(isFYP).length})
+          </button>
+        </div>
+
         {/* Category Filter Pills */}
         <div className="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-slate-800/80">
           {categories.map((cat) => (
@@ -151,7 +201,12 @@ export default function Projects({ onOpenModal }: ProjectsProps) {
                 key={project.id}
                 className="glass-card rounded-2xl flex flex-col justify-between group relative overflow-hidden border border-slate-800 hover:border-cyan-500/50 transition-all duration-300"
               >
-                {/* Featured Badge */}
+                {/* Badges: FYP on Left, Featured on Right */}
+                {isFYP(project) && (
+                  <div className="absolute top-3.5 left-3.5 z-20 inline-flex items-center gap-1 text-[10px] font-bold text-cyan-200 bg-cyan-950/90 backdrop-blur-md border border-cyan-500/60 px-2.5 py-1 rounded-full shadow-md">
+                    <span>🎓 KDU FYP</span>
+                  </div>
+                )}
                 {project.featured && (
                   <div className="absolute top-3.5 right-3.5 z-20 inline-flex items-center gap-1 text-[10px] font-bold text-amber-300 bg-amber-500/20 backdrop-blur-md border border-amber-500/40 px-2.5 py-1 rounded-full shadow-md">
                     <Star className="w-3 h-3 fill-amber-300" />

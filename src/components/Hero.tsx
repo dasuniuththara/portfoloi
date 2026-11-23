@@ -28,10 +28,17 @@ export default function Hero({ onOpenFeatured }: HeroProps) {
 
             <a
               href="#projects"
-              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 hover:bg-cyan-900 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-950/80 border border-cyan-500/50 text-cyan-200 hover:bg-cyan-900 transition-colors"
+            >
+              <span>🎓 KDU FYP: Piano Playing Robot &amp; AimPoint AI</span>
+            </a>
+
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-slate-900/80 border border-slate-700/80 text-cyan-300 hover:bg-slate-800 transition-colors"
             >
               <Eye className="w-3.5 h-3.5 text-cyan-400" />
-              <span>7 High-Fidelity UI, AI &amp; Hardware Prototypes</span>
+              <span>8 Interactive UI &amp; Hardware Prototypes</span>
             </a>
           </div>
 

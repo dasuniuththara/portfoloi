@@ -3,7 +3,7 @@ export interface Project {
   title: string;
   tagline: string;
   description: string;
-  category: "Full-Stack" | "Frontend" | "Backend/API" | "Mobile / Tools" | "AI / ML";
+  category: "Full-Stack" | "Frontend" | "Backend/API" | "Mobile / Tools" | "AI / ML" | "FYP & Research";
   tags: string[];
   githubUrl: string;
   demoUrl?: string;
@@ -124,7 +124,7 @@ export const portfolioConfig = {
       title: "FYP: Adaptive Robotic Assistance for Piano Playing",
       tagline: "KDU Final Year Project: Robotic piano assistant enhancing accessibility for individuals with disabilities",
       description: "Final Year Project (FYP) for Bachelor of Computer Engineering at General Sir John Kotelawala Defence University (KDU), Registration No. D_BCE_22_0022. An adaptive robotic piano playing system combining multi-actuator solenoid key strikers, real-time MIDI parsing, and LSTM musical accompaniment models to assist motor-impaired individuals.",
-      category: "Mobile / Tools",
+      category: "FYP & Research",
       tags: ["FYP (KDU)", "Robotics", "Embedded C++", "Microcontrollers", "MIDI Protocol", "LSTM Music Gen", "Assistive Tech", "Kinematics"],
       githubUrl: "https://github.com/dasuniuththara/portfoloi",
       demoUrl: undefined,
@@ -204,8 +204,8 @@ export const portfolioConfig = {
       title: "SensoPath: Smart Assistive Footwear for Deafblind Individuals",
       tagline: "IoT wearable footwear with multi-directional ultrasonic obstacle detection & haptic feedback",
       description: "An embedded hardware-software assistive system designed for visually and hearing-impaired individuals to navigate physical environments autonomously. Features dual ultrasonic range scanning, bilateral vibration haptic feedback motors, ESP32 microcontroller, and BLE mobile telemetry.",
-      category: "Mobile / Tools",
-      tags: ["IoT", "Embedded C++", "ESP32", "BLE 5.0", "Sensor Fusion", "Haptics", "KDU Research"],
+      category: "FYP & Research",
+      tags: ["FYP (KDU)", "IoT", "Embedded C++", "ESP32", "BLE 5.0", "Sensor Fusion", "Haptics", "KDU Research"],
       githubUrl: "https://github.com/dasuniuththara/portfoloi",
       demoUrl: undefined,
       featured: true,

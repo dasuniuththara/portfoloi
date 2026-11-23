@@ -19,6 +19,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Services", href: "#services" },
     { name: "Projects & Repos", href: "#projects" },
+    { name: "🎓 FYP & Research", href: "#projects" },
     { name: "Tech Stack", href: "#skills" },
     { name: "Process", href: "#process" },
     { name: "Client Inquiries", href: "#contact" },
