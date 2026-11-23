@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="apiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#apiBg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="50" fill="#0b0f19" stroke="#1e293b" stroke-width="1"/>
+  <text x="24" y="32" font-family="-apple-system, monospace" font-weight="bold" font-size="15" fill="#10b981">CloudVault REST API v2.4.0</text>
+  <rect x="290" y="14" width="70" height="22" rx="4" fill="#10b981" fill-opacity="0.2"/>
+  <text x="303" y="29" font-family="-apple-system, monospace" font-size="10" font-weight="bold" fill="#34d399">OAS 3.1</text>
+  
+  <text x="600" y="31" font-family="-apple-system, monospace" font-size="11" fill="#94a3b8">Uptime: 99.99% • 32ms</text>
+
+  <!-- Left: Endpoints Tree -->
+  <rect x="20" y="70" width="260" height="410" rx="10" fill="#0b1329" stroke="#1e293b" stroke-width="1"/>
+  <text x="35" y="98" font-family="-apple-system, sans-serif" font-weight="bold" font-size="12" fill="#64748b">API SPECIFICATION</text>
+
+  <!-- Endpoint 1 -->
+  <rect x="30" y="115" width="240" height="38" rx="6" fill="#1e293b"/>
+  <rect x="38" y="124" width="46" height="20" rx="4" fill="#10b981"/>
+  <text x="47" y="138" font-family="-apple-system, monospace" font-size="10" font-weight="bold" fill="#fff">POST</text>
+  <text x="92" y="139" font-family="-apple-system, monospace" font-size="11" fill="#e2e8f0">/api/v1/auth/login</text>
+
+  <!-- Endpoint 2 -->
+  <rect x="30" y="160" width="240" height="38" rx="6" fill="#0284c7" fill-opacity="0.15" stroke="#0284c7" stroke-width="1"/>
+  <rect x="38" y="169" width="46" height="20" rx="4" fill="#0284c7"/>
+  <text x="47" y="183" font-family="-apple-system, monospace" font-size="10" font-weight="bold" fill="#fff">POST</text>
+  <text x="92" y="184" font-family="-apple-system, monospace" font-size="11" fill="#38bdf8">/api/v1/storage/upload</text>
+
+  <!-- Endpoint 3 -->
+  <rect x="30" y="205" width="240" height="38" rx="6" fill="#1e293b"/>
+  <rect x="38" y="214" width="46" height="20" rx="4" fill="#6366f1"/>
+  <text x="51" y="228" font-family="-apple-system, monospace" font-size="10" font-weight="bold" fill="#fff">GET</text>
+  <text x="92" y="229" font-family="-apple-system, monospace" font-size="11" fill="#e2e8f0">/api/v1/storage/files</text>
+
+  <!-- Endpoint 4 -->
+  <rect x="30" y="250" width="240" height="38" rx="6" fill="#1e293b"/>
+  <rect x="38" y="259" width="46" height="20" rx="4" fill="#ef4444"/>
+  <text x="44" y="273" font-family="-apple-system, monospace" font-size="10" font-weight="bold" fill="#fff">DELETE</text>
+  <text x="92" y="274" font-family="-apple-system, monospace" font-size="11" fill="#e2e8f0">/api/v1/storage/:id</text>
+
+  <!-- Right: Terminal & Code Response -->
+  <rect x="295" y="70" width="485" height="410" rx="10" fill="#050811" stroke="#334155" stroke-width="1"/>
+  
+  <rect x="295" y="70" width="485" height="36" fill="#0f172a" rx="10 10 0 0"/>
+  <text x="315" y="93" font-family="-apple-system, monospace" font-size="12" fill="#94a3b8">Interactive Request Inspector</text>
+  <rect x="670" y="78" width="95" height="22" rx="4" fill="#10b981"/>
+  <text x="688" y="93" font-family="-apple-system, monospace" font-size="10" font-weight="bold" fill="#000">SEND REQ ▶</text>
+
+  <!-- Shell Curl -->
+  <text x="315" y="130" font-family="monospace" font-size="11" fill="#f59e0b">$ curl -X POST https://api.cloudvault.dev/v1/storage/upload \</text>
+  <text x="330" y="148" font-family="monospace" font-size="11" fill="#94a3b8">  -H "Authorization: Bearer eyJhbGciOiJIUzI1Ni..." \</text>
+  <text x="330" y="166" font-family="monospace" font-size="11" fill="#94a3b8">  -F "file=@presentation_final.pdf"</text>
+
+  <!-- Response status -->
+  <rect x="315" y="190" width="130" height="24" rx="4" fill="#10b981" fill-opacity="0.2"/>
+  <text x="325" y="206" font-family="monospace" font-size="11" font-weight="bold" fill="#34d399">HTTP 201 CREATED</text>
+  <text x="460" y="206" font-family="monospace" font-size="11" fill="#64748b">Latency: 28.4ms • 1.2MB</text>
+
+  <!-- JSON Payload -->
+  <rect x="315" y="225" width="445" height="235" rx="8" fill="#0b1021" stroke="#1e293b" stroke-width="1"/>
+  <text x="330" y="250" font-family="monospace" font-size="11" fill="#93c5fd">{</text>
+  <text x="345" y="270" font-family="monospace" font-size="11" fill="#38bdf8">  "success": <tspan fill="#34d399">true</tspan>,</text>
+  <text x="345" y="290" font-family="monospace" font-size="11" fill="#38bdf8">  "fileId": <tspan fill="#fbcfe8">"cv_file_892bdf01a"</tspan>,</text>
+  <text x="345" y="310" font-family="monospace" font-size="11" fill="#38bdf8">  "url": <tspan fill="#fbcfe8">"https://s3.cloudvault.dev/vault/presentation.pdf"</tspan>,</text>
+  <text x="345" y="330" font-family="monospace" font-size="11" fill="#38bdf8">  "checksum": <tspan fill="#fbcfe8">"sha256:e3b0c44298fc1c149afbf4c8996fb92427ae41e"</tspan>,</text>
+  <text x="345" y="350" font-family="monospace" font-size="11" fill="#38bdf8">  "encryption": <tspan fill="#fbcfe8">"AES-256-GCM"</tspan>,</text>
+  <text x="345" y="370" font-family="monospace" font-size="11" fill="#38bdf8">  "expiresIn": <tspan fill="#fbbf24">3600</tspan>,</text>
+  <text x="345" y="390" font-family="monospace" font-size="11" fill="#38bdf8">  "rateLimitRemaining": <tspan fill="#fbbf24">498</tspan></text>
+  <text x="330" y="415" font-family="monospace" font-size="11" fill="#93c5fd">}</text>
+  <text x="330" y="445" font-family="monospace" font-size="10" fill="#10b981">✔ Validated against Swagger schema v3.1</text>
+</svg>

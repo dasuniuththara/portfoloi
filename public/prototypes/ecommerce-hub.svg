@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ecomBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#4f46e5"/>
+    </linearGradient>
+    <linearGradient id="accentBtn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" rx="16" fill="url(#ecomBg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Top Header / Navigation -->
+  <rect x="0" y="0" width="800" height="60" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+  <text x="32" y="37" font-family="-apple-system, sans-serif" font-weight="800" font-size="18" fill="#ffffff">SHOP<tspan fill="#ec4899">SPHERE</tspan></text>
+  
+  <text x="170" y="36" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Electronics</text>
+  <text x="260" y="36" font-family="-apple-system, sans-serif" font-size="13" fill="#94a3b8">Workstations</text>
+  <text x="370" y="36" font-family="-apple-system, sans-serif" font-size="13" fill="#94a3b8">Audio Gear</text>
+
+  <!-- Search Input Bar -->
+  <rect x="470" y="16" width="190" height="28" rx="14" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="490" y="34" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">🔍 Instant SKU Search...</text>
+
+  <!-- Cart Button with Badge -->
+  <rect x="680" y="14" width="90" height="32" rx="16" fill="url(#accentBtn)"/>
+  <text x="702" y="35" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">🛒 Cart (3)</text>
+
+  <!-- Hero Promo Banner -->
+  <rect x="30" y="75" width="490" height="135" rx="14" fill="url(#purpleGrad)"/>
+  <text x="50" y="108" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#fbcfe8" letter-spacing="1">NEXT-GEN PERFORMANCE</text>
+  <text x="50" y="138" font-family="-apple-system, sans-serif" font-size="22" font-weight="900" fill="#ffffff">Spatial Audio Pro Wireless</text>
+  <text x="50" y="162" font-family="-apple-system, sans-serif" font-size="12" fill="#e0e7ff">Sub-10ms latency with active noise suppression and multi-device pairing.</text>
+  <rect x="50" y="174" width="110" height="26" rx="6" fill="#ffffff"/>
+  <text x="70" y="191" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#4338ca">Buy Now $299</text>
+
+  <!-- Checkout / Mini Cart Drawer Preview -->
+  <rect x="540" y="75" width="230" height="395" rx="14" fill="#0b1329" stroke="#334155" stroke-width="1"/>
+  <text x="560" y="105" font-family="-apple-system, sans-serif" font-weight="bold" font-size="14" fill="#ffffff">Order Summary</text>
+  <rect x="560" y="115" width="190" height="1" fill="#1e293b"/>
+
+  <!-- Cart Item 1 -->
+  <rect x="560" y="130" width="40" height="40" rx="8" fill="#1e293b"/>
+  <text x="575" y="155" font-size="16">🎧</text>
+  <text x="610" y="145" font-family="-apple-system, sans-serif" font-weight="600" font-size="11" fill="#ffffff">Studio Headset</text>
+  <text x="610" y="162" font-family="-apple-system, sans-serif" font-size="11" fill="#ec4899">$299.00</text>
+
+  <!-- Cart Item 2 -->
+  <rect x="560" y="185" width="40" height="40" rx="8" fill="#1e293b"/>
+  <text x="575" y="210" font-size="16">⌨️</text>
+  <text x="610" y="200" font-family="-apple-system, sans-serif" font-weight="600" font-size="11" fill="#ffffff">Mech 75% Keyboard</text>
+  <text x="610" y="217" font-family="-apple-system, sans-serif" font-size="11" fill="#ec4899">$149.00</text>
+
+  <rect x="560" y="245" width="190" height="1" fill="#1e293b"/>
+  <text x="560" y="270" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">Subtotal</text>
+  <text x="715" y="270" font-family="-apple-system, sans-serif" font-weight="600" font-size="11" fill="#ffffff">$448.00</text>
+  <text x="560" y="292" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">Shipping (Express)</text>
+  <text x="725" y="292" font-family="-apple-system, sans-serif" font-size="11" fill="#34d399">FREE</text>
+  
+  <rect x="560" y="320" width="190" height="40" rx="8" fill="url(#accentBtn)"/>
+  <text x="590" y="345" font-family="-apple-system, sans-serif" font-size="12" font-weight="bold" fill="#ffffff">🔒 Stripe One-Click</text>
+
+  <text x="570" y="380" font-family="-apple-system, sans-serif" font-size="10" fill="#64748b" text-anchor="middle" cx="655">Guaranteed 256-bit encrypted checkout</text>
+
+  <!-- Product Catalog Grid -->
+  <!-- Product 1 -->
+  <rect x="30" y="230" width="150" height="240" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <rect x="42" y="242" width="126" height="110" rx="8" fill="#1e293b"/>
+  <text x="90" y="305" font-size="34" text-anchor="middle">💻</text>
+  <text x="42" y="372" font-family="-apple-system, sans-serif" font-weight="600" font-size="12" fill="#ffffff">MacBook M3 Stand</text>
+  <text x="42" y="390" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">Anodized CNC Aluminum</text>
+  <text x="42" y="415" font-family="-apple-system, sans-serif" font-weight="bold" font-size="14" fill="#ec4899">$79.00</text>
+  <rect x="42" y="428" width="126" height="26" rx="6" fill="#334155"/>
+  <text x="75" y="445" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Add to Cart</text>
+
+  <!-- Product 2 -->
+  <rect x="200" y="230" width="150" height="240" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <rect x="212" y="242" width="126" height="110" rx="8" fill="#1e293b"/>
+  <text x="260" y="305" font-size="34" text-anchor="middle">🖱️</text>
+  <text x="212" y="372" font-family="-apple-system, sans-serif" font-weight="600" font-size="12" fill="#ffffff">ErgoMaster Mouse</text>
+  <text x="212" y="390" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">4000 DPI Darkfield</text>
+  <text x="212" y="415" font-family="-apple-system, sans-serif" font-weight="bold" font-size="14" fill="#ec4899">$99.00</text>
+  <rect x="212" y="428" width="126" height="26" rx="6" fill="#334155"/>
+  <text x="245" y="445" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Add to Cart</text>
+
+  <!-- Product 3 -->
+  <rect x="370" y="230" width="150" height="240" rx="12" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <rect x="382" y="242" width="126" height="110" rx="8" fill="#1e293b"/>
+  <text x="430" y="305" font-size="34" text-anchor="middle">💡</text>
+  <text x="382" y="372" font-family="-apple-system, sans-serif" font-weight="600" font-size="12" fill="#ffffff">ScreenBar Plus Light</text>
+  <text x="382" y="390" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">Auto-dimming CRI 95</text>
+  <text x="382" y="415" font-family="-apple-system, sans-serif" font-weight="bold" font-size="14" fill="#ec4899">$129.00</text>
+  <rect x="382" y="428" width="126" height="26" rx="6" fill="#334155"/>
+  <text x="415" y="445" font-family="-apple-system, sans-serif" font-size="10" font-weight="bold" fill="#ffffff">Add to Cart</text>
+</svg>

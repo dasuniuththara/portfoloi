@@ -1,8 +1,14 @@
+"use client";
+
 import { portfolioConfig } from "@/data/portfolioData";
-import { ArrowRight, ExternalLink, Sparkles, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ExternalLink, Sparkles, CheckCircle2, Eye, Bot, ShieldCheck, Zap } from "lucide-react";
 import { GithubIcon } from "@/components/Icons";
 
-export default function Hero() {
+interface HeroProps {
+  onOpenFeatured?: () => void;
+}
+
+export default function Hero({ onOpenFeatured }: HeroProps) {
   const { personal } = portfolioConfig;
 
   return (
@@ -13,17 +19,27 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl">
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 mb-6">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>{personal.badge}</span>
+          {/* Status Badge & Prototype Callout */}
+          <div className="flex flex-wrap items-center gap-2.5 mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium bg-emerald-500/10 border border-emerald-500/30 text-emerald-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>{personal.badge}</span>
+            </div>
+
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium bg-cyan-950/60 border border-cyan-800/60 text-cyan-300 hover:bg-cyan-900 transition-colors"
+            >
+              <Eye className="w-3.5 h-3.5 text-cyan-400" />
+              <span>6 Interactive UI Prototypes Available</span>
+            </a>
           </div>
 
           {/* Main Title */}
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight sm:leading-tight">
             Building High-Impact Web Apps for the{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400">
-              Stack World
+              Modern World
             </span>
           </h1>
 
@@ -46,7 +62,8 @@ export default function Hero() {
               href="#projects"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-base font-semibold text-slate-200 bg-slate-900/80 hover:bg-slate-800 border border-slate-700 hover:border-slate-600 transition-all hover:text-white"
             >
-              <span>View Repositories & Work</span>
+              <Eye className="w-4 h-4 text-cyan-400" />
+              <span>Inspect Projects &amp; Prototypes</span>
             </a>
 
             <a
@@ -61,24 +78,30 @@ export default function Hero() {
           </div>
 
           {/* Key Freelance Metrics & Trust Indicators */}
-          <div className="mt-14 pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-6">
+          <div className="mt-14 pt-8 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-4 gap-6">
             <div className="flex flex-col">
               <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-sky-300">
                 {personal.projectsCompleted}
               </span>
-              <span className="text-sm text-slate-400 mt-1">Repositories & Projects</span>
+              <span className="text-xs sm:text-sm text-slate-400 mt-1">Live Apps &amp; Repos</span>
             </div>
             <div className="flex flex-col">
               <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-400">
                 {personal.yearsExperience}
               </span>
-              <span className="text-sm text-slate-400 mt-1">Years Building Software</span>
+              <span className="text-xs sm:text-sm text-slate-400 mt-1">Years Building Software</span>
             </div>
-            <div className="flex flex-col col-span-2 sm:col-span-1">
+            <div className="flex flex-col">
               <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
                 {personal.clientSatisfaction}
               </span>
-              <span className="text-sm text-slate-400 mt-1">Satisfaction & Delivery</span>
+              <span className="text-xs sm:text-sm text-slate-400 mt-1">Client Satisfaction</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400">
+                6/6
+              </span>
+              <span className="text-xs sm:text-sm text-slate-400 mt-1">Full UI Prototypes</span>
             </div>
           </div>
         </div>

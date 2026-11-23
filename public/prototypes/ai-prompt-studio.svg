@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#aiBg)" stroke="#312e81" stroke-width="2"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="50" fill="#090d16" stroke="#1e293b" stroke-width="1"/>
+  <text x="24" y="32" font-family="-apple-system, sans-serif" font-weight="bold" font-size="16" fill="#a855f7">✨ PromptForge Studio</text>
+  
+  <rect x="220" y="14" width="160" height="24" rx="6" fill="#1e293b"/>
+  <text x="235" y="30" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">Model: Claude 3.5 Sonnet ▼</text>
+
+  <rect x="390" y="14" width="140" height="24" rx="6" fill="#1e293b"/>
+  <text x="405" y="30" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">Compare: GPT-4o ▼</text>
+
+  <rect x="670" y="12" width="105" height="28" rx="6" fill="#9333ea"/>
+  <text x="686" y="30" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#fff">⚡ Run Batch</text>
+
+  <!-- Left: Prompt Editor -->
+  <rect x="20" y="70" width="370" height="410" rx="10" fill="#030712" stroke="#334155" stroke-width="1"/>
+  <rect x="20" y="70" width="370" height="35" rx="10 10 0 0" fill="#0f172a"/>
+  <text x="35" y="92" font-family="-apple-system, sans-serif" font-weight="bold" font-size="12" fill="#e2e8f0">System &amp; User Prompt Input</text>
+  <text x="320" y="92" font-family="monospace" font-size="10" fill="#c084fc">342 tok</text>
+
+  <text x="35" y="125" font-family="monospace" font-size="11" fill="#a78bfa">SYSTEM:</text>
+  <text x="35" y="145" font-family="monospace" font-size="11" fill="#cbd5e1">You are a Senior Full-Stack Architect. Analyze the</text>
+  <text x="35" y="165" font-family="monospace" font-size="11" fill="#cbd5e1">following Next.js architecture diagram and evaluate</text>
+  <text x="35" y="185" font-family="monospace" font-size="11" fill="#cbd5e1">SSR vs SSG trade-offs for high concurrency.</text>
+
+  <text x="35" y="225" font-family="monospace" font-size="11" fill="#38bdf8">USER VARIABLES:</text>
+  <rect x="35" y="240" width="340" height="70" rx="6" fill="#0f172a" stroke="#1e293b"/>
+  <text x="45" y="260" font-family="monospace" font-size="10" fill="#94a3b8">{</text>
+  <text x="55" y="278" font-family="monospace" font-size="10" fill="#f472b6">  "target_rps": 15000,</text>
+  <text x="55" y="296" font-family="monospace" font-size="10" fill="#f472b6">  "cache_strategy": "stale-while-revalidate"</text>
+  <text x="45" y="305" font-family="monospace" font-size="10" fill="#94a3b8">}</text>
+
+  <!-- Parameters Slider -->
+  <text x="35" y="340" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">Temperature: 0.2 (Deterministic)</text>
+  <line x1="35" y1="355" x2="365" y2="355" stroke="#334155" stroke-width="4" stroke-linecap="round"/>
+  <line x1="35" y1="355" x2="105" y2="355" stroke="#a855f7" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="105" cy="355" r="7" fill="#c084fc"/>
+
+  <rect x="35" y="420" width="160" height="28" rx="6" fill="#1e293b"/>
+  <text x="50" y="438" font-family="-apple-system, sans-serif" font-size="11" fill="#cbd5e1">📋 Export Python SDK</text>
+
+  <!-- Right: Model Comparison Output -->
+  <rect x="410" y="70" width="370" height="410" rx="10" fill="#030712" stroke="#334155" stroke-width="1"/>
+  <rect x="410" y="70" width="370" height="35" rx="10 10 0 0" fill="#0f172a"/>
+  <text x="425" y="92" font-family="-apple-system, sans-serif" font-weight="bold" font-size="12" fill="#34d399">Evaluated Output (Streaming 142 tok/s)</text>
+
+  <!-- Output panel -->
+  <rect x="425" y="115" width="340" height="150" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="435" y="135" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#c084fc">Claude 3.5 Sonnet Response:</text>
+  <text x="435" y="155" font-family="-apple-system, sans-serif" font-size="11" fill="#e2e8f0">1. Recommendation: Incremental Static Regen (ISR)</text>
+  <text x="435" y="175" font-family="-apple-system, sans-serif" font-size="11" fill="#cbd5e1">   For 15,000 RPS, direct SSR creates DB connection pool</text>
+  <text x="435" y="195" font-family="-apple-system, sans-serif" font-size="11" fill="#cbd5e1">   exhaustion. Stale-while-revalidate drops P99 to 8ms.</text>
+  <text x="435" y="225" font-family="-apple-system, sans-serif" font-size="11" fill="#34d399">Latency: 410ms • Cost: $0.0018 • Eval Score: 98/100</text>
+
+  <rect x="425" y="280" width="340" height="150" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="435" y="300" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#38bdf8">GPT-4o Response:</text>
+  <text x="435" y="320" font-family="-apple-system, sans-serif" font-size="11" fill="#e2e8f0">1. Edge CDN caching with Cloudflare Workers</text>
+  <text x="435" y="340" font-family="-apple-system, sans-serif" font-size="11" fill="#cbd5e1">   Deploy lightweight edge handlers to absorb spikes.</text>
+  <text x="435" y="370" font-family="-apple-system, sans-serif" font-size="11" fill="#38bdf8">Latency: 520ms • Cost: $0.0022 • Eval Score: 95/100</text>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0.0"/>
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="500" rx="16" fill="url(#bg)" stroke="#1e293b" stroke-width="2"/>
+
+  <!-- Top App Navigation Bar -->
+  <rect x="0" y="0" width="800" height="48" rx="16" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="28" cy="24" r="5" fill="#ef4444"/>
+  <circle cx="44" cy="24" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="24" r="5" fill="#10b981"/>
+  <rect x="90" y="14" width="260" height="20" rx="6" fill="#1e293b"/>
+  <text x="105" y="28" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">devmetrics.app/analytics/live</text>
+  <rect x="680" y="12" width="90" height="24" rx="6" fill="#0284c7"/>
+  <text x="702" y="28" font-family="-apple-system, sans-serif" font-weight="bold" font-size="11" fill="#ffffff">+ Export</text>
+
+  <!-- Sidebar -->
+  <rect x="0" y="48" width="180" height="452" fill="#0b1329" stroke="#1e293b" stroke-width="1"/>
+  <text x="24" y="84" font-family="-apple-system, sans-serif" font-weight="bold" font-size="15" fill="#38bdf8">DevMetrics</text>
+  
+  <rect x="16" y="105" width="148" height="32" rx="8" fill="#0284c7" fill-opacity="0.2" stroke="#0284c7" stroke-width="1"/>
+  <text x="44" y="125" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#38bdf8">📊 Dashboard</text>
+  
+  <text x="44" y="165" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">👥 Active Users</text>
+  <text x="44" y="200" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">💰 Revenue &amp; MRR</text>
+  <text x="44" y="235" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">⚡ Cohort Retention</text>
+  <text x="44" y="270" font-family="-apple-system, sans-serif" font-size="12" fill="#94a3b8">⚙️ Settings</text>
+
+  <!-- Main Content Area -->
+  <!-- Header Stats -->
+  <text x="210" y="85" font-family="-apple-system, sans-serif" font-weight="bold" font-size="18" fill="#ffffff">Platform Overview</text>
+  <rect x="680" y="68" width="90" height="24" rx="12" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="1"/>
+  <text x="696" y="84" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#34d399">● Live: 4,120</text>
+
+  <!-- 3 Metric Cards -->
+  <!-- Card 1 -->
+  <rect x="210" y="105" width="170" height="85" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <text x="225" y="128" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">MONTHLY RECURRING (MRR)</text>
+  <text x="225" y="156" font-family="-apple-system, sans-serif" font-weight="bold" font-size="20" fill="#ffffff">$48,250</text>
+  <text x="225" y="176" font-family="-apple-system, sans-serif" font-size="11" fill="#34d399">↑ +18.4% vs last mo</text>
+
+  <!-- Card 2 -->
+  <rect x="400" y="105" width="170" height="85" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <text x="415" y="128" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">AVG LATENCY (P99)</text>
+  <text x="415" y="156" font-family="-apple-system, sans-serif" font-weight="bold" font-size="20" fill="#ffffff">42 ms</text>
+  <text x="415" y="176" font-family="-apple-system, sans-serif" font-size="11" fill="#38bdf8">↓ -12ms optimized</text>
+
+  <!-- Card 3 -->
+  <rect x="590" y="105" width="180" height="85" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <text x="605" y="128" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">ACTIVE SUBSCRIBERS</text>
+  <text x="605" y="156" font-family="-apple-system, sans-serif" font-weight="bold" font-size="20" fill="#ffffff">12,840</text>
+  <text x="605" y="176" font-family="-apple-system, sans-serif" font-size="11" fill="#a78bfa">★ 99.2% Retention</text>
+
+  <!-- Main Chart Card -->
+  <rect x="210" y="205" width="560" height="195" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1"/>
+  <text x="230" y="235" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13" fill="#ffffff">Traffic Velocity &amp; Concurrent API Calls</text>
+  
+  <!-- Grid Lines -->
+  <line x1="230" y1="260" x2="740" y2="260" stroke="#1e293b" stroke-dasharray="3 3"/>
+  <line x1="230" y1="300" x2="740" y2="300" stroke="#1e293b" stroke-dasharray="3 3"/>
+  <line x1="230" y1="340" x2="740" y2="340" stroke="#1e293b" stroke-dasharray="3 3"/>
+  <line x1="230" y1="375" x2="740" y2="375" stroke="#334155"/>
+
+  <!-- Filled Area Chart -->
+  <path d="M 230 360 Q 280 320, 340 330 T 450 280 T 560 250 T 660 290 T 740 230 L 740 375 L 230 375 Z" fill="url(#chartGrad)"/>
+  <path d="M 230 360 Q 280 320, 340 330 T 450 280 T 560 250 T 660 290 T 740 230" fill="none" stroke="url(#cyanLine)" stroke-width="3"/>
+
+  <!-- High point beacon -->
+  <circle cx="740" cy="230" r="5" fill="#38bdf8"/>
+  <circle cx="740" cy="230" r="10" fill="#38bdf8" fill-opacity="0.3"/>
+
+  <!-- Bottom Mini Cards -->
+  <rect x="210" y="415" width="270" height="65" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="225" y="438" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">TOP REGION TRAFFIC</text>
+  <text x="225" y="460" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#e2e8f0">🇺🇸 US-East: 54%  •  🇪🇺 EU-West: 31%</text>
+
+  <rect x="500" y="415" width="270" height="65" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="515" y="438" font-family="-apple-system, sans-serif" font-size="11" fill="#94a3b8">SYSTEM HEALTH</text>
+  <text x="515" y="460" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#34d399">● All Services Operational (100%)</text>
+</svg>
