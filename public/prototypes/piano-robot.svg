@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pianoBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" rx="16" fill="url(#pianoBg)" stroke="#d97706" stroke-width="2"/>
+
+  <!-- Top bar -->
+  <rect x="0" y="0" width="800" height="50" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <circle cx="28" cy="25" r="5" fill="#ef4444"/>
+  <circle cx="44" cy="25" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="25" r="5" fill="#10b981"/>
+  <text x="85" y="31" font-family="-apple-system, sans-serif" font-weight="900" font-size="15" fill="#f59e0b">
+    ROBO-PIANIST <tspan fill="#fde68a">• Adaptive Robotic Assistance for Piano Playing (KDU FYP)</tspan>
+  </text>
+  <rect x="660" y="14" width="115" height="24" rx="12" fill="#d97706" fill-opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
+  <text x="675" y="30" font-family="-apple-system, sans-serif" font-size="11" font-weight="bold" fill="#fef3c7">● Robot Active</text>
+
+  <!-- Left: Piano Keyboard & Robotic Actuation Visualization -->
+  <rect x="25" y="70" width="460" height="405" rx="12" fill="#030712" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="45" y="98" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13" fill="#f59e0b">Physical Robotic Actuator Array &amp; Piano Bed</text>
+
+  <!-- Actuator Overhead Rail Frame -->
+  <rect x="40" y="115" width="430" height="45" rx="6" fill="#1e293b" stroke="#334155"/>
+  <text x="55" y="138" font-family="monospace" font-size="10" fill="#94a3b8">ROBOTIC SOLENOID GANTRY • 8-CHANNEL PWM VELOCITY CONTROLLER (ESP32)</text>
+
+  <!-- Solenoid Actuator Pistons hanging down -->
+  <!-- Actuator 1 (Hitting C4) -->
+  <rect x="75" y="155" width="16" height="55" rx="3" fill="#3b82f6"/>
+  <line x1="83" y1="210" x2="83" y2="245" stroke="#60a5fa" stroke-width="4"/>
+  <circle cx="83" cy="245" r="4" fill="#f59e0b"/>
+  <text x="65" y="235" font-family="monospace" font-size="9" font-weight="bold" fill="#38bdf8">ACT_1</text>
+
+  <!-- Actuator 2 -->
+  <rect x="135" y="155" width="16" height="45" rx="3" fill="#475569"/>
+  <line x1="143" y1="200" x2="143" y2="230" stroke="#94a3b8" stroke-width="3"/>
+  <circle cx="143" cy="230" r="3" fill="#64748b"/>
+
+  <!-- Actuator 3 (Hitting E4) -->
+  <rect x="195" y="155" width="16" height="55" rx="3" fill="#3b82f6"/>
+  <line x1="203" y1="210" x2="203" y2="245" stroke="#60a5fa" stroke-width="4"/>
+  <circle cx="203" cy="245" r="4" fill="#f59e0b"/>
+  <text x="185" y="235" font-family="monospace" font-size="9" font-weight="bold" fill="#38bdf8">ACT_3</text>
+
+  <!-- Actuator 4 -->
+  <rect x="255" y="155" width="16" height="45" rx="3" fill="#475569"/>
+  <line x1="263" y1="200" x2="263" y2="230" stroke="#94a3b8" stroke-width="3"/>
+  <circle cx="263" cy="230" r="3" fill="#64748b"/>
+
+  <!-- Actuator 5 (Hitting G4) -->
+  <rect x="315" y="155" width="16" height="55" rx="3" fill="#3b82f6"/>
+  <line x1="323" y1="210" x2="323" y2="245" stroke="#60a5fa" stroke-width="4"/>
+  <circle cx="323" cy="245" r="4" fill="#f59e0b"/>
+  <text x="305" y="235" font-family="monospace" font-size="9" font-weight="bold" fill="#38bdf8">ACT_5</text>
+
+  <!-- Actuator 6 -->
+  <rect x="375" y="155" width="16" height="45" rx="3" fill="#475569"/>
+  <line x1="383" y1="200" x2="383" y2="230" stroke="#94a3b8" stroke-width="3"/>
+  <circle cx="383" cy="230" r="3" fill="#64748b"/>
+
+  <!-- Piano Keyboard Bed (White & Black Keys) -->
+  <g transform="translate(50, 250)">
+    <!-- 14 White Keys -->
+    <!-- Key 1: C4 (Active Hit) -->
+    <rect x="0" y="0" width="28" height="150" rx="3" fill="#dbeafe" stroke="#1e293b" stroke-width="1.5"/>
+    <rect x="0" y="125" width="28" height="25" rx="2" fill="#3b82f6"/>
+    <text x="8" y="142" font-family="monospace" font-size="10" font-weight="bold" fill="#fff">C4</text>
+
+    <!-- Key 2: D4 -->
+    <rect x="30" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="38" y="142" font-family="monospace" font-size="10" fill="#64748b">D4</text>
+
+    <!-- Key 3: E4 (Active Hit) -->
+    <rect x="60" y="0" width="28" height="150" rx="3" fill="#dbeafe" stroke="#1e293b" stroke-width="1.5"/>
+    <rect x="60" y="125" width="28" height="25" rx="2" fill="#3b82f6"/>
+    <text x="68" y="142" font-family="monospace" font-size="10" font-weight="bold" fill="#fff">E4</text>
+
+    <!-- Key 4: F4 -->
+    <rect x="90" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="98" y="142" font-family="monospace" font-size="10" fill="#64748b">F4</text>
+
+    <!-- Key 5: G4 (Active Hit) -->
+    <rect x="120" y="0" width="28" height="150" rx="3" fill="#dbeafe" stroke="#1e293b" stroke-width="1.5"/>
+    <rect x="120" y="125" width="28" height="25" rx="2" fill="#3b82f6"/>
+    <text x="128" y="142" font-family="monospace" font-size="10" font-weight="bold" fill="#fff">G4</text>
+
+    <!-- Key 6: A4 -->
+    <rect x="150" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="158" y="142" font-family="monospace" font-size="10" fill="#64748b">A4</text>
+
+    <!-- Key 7: B4 -->
+    <rect x="180" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="188" y="142" font-family="monospace" font-size="10" fill="#64748b">B4</text>
+
+    <!-- Key 8: C5 -->
+    <rect x="210" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="218" y="142" font-family="monospace" font-size="10" fill="#64748b">C5</text>
+
+    <!-- Key 9: D5 -->
+    <rect x="240" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="248" y="142" font-family="monospace" font-size="10" fill="#64748b">D5</text>
+
+    <!-- Key 10: E5 -->
+    <rect x="270" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="278" y="142" font-family="monospace" font-size="10" fill="#64748b">E5</text>
+
+    <!-- Key 11: F5 -->
+    <rect x="300" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="308" y="142" font-family="monospace" font-size="10" fill="#64748b">F5</text>
+
+    <!-- Key 12: G5 -->
+    <rect x="330" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="338" y="142" font-family="monospace" font-size="10" fill="#64748b">G5</text>
+
+    <!-- Key 13: A5 -->
+    <rect x="360" y="0" width="28" height="150" rx="3" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+    <text x="368" y="142" font-family="monospace" font-size="10" fill="#64748b">A5</text>
+
+    <!-- Black Keys -->
+    <rect x="18" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="48" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="108" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="138" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="168" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="228" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="258" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="318" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+    <rect x="348" y="0" width="18" height="95" rx="2" fill="#0f172a"/>
+  </g>
+
+  <!-- Bottom video HUD stats -->
+  <rect x="40" y="425" width="430" height="35" rx="6" fill="#0f172a" stroke="#1e293b"/>
+  <text x="50" y="447" font-family="monospace" font-size="10" fill="#f59e0b">LATENCY: 18.4ms • HARMONY: C Major Triad (C4-E4-G4) • MODE: Adaptive Disability Assist</text>
+
+  <!-- Right: Adaptive Assistance & MIDI Intelligence -->
+  <rect x="500" y="70" width="275" height="405" rx="12" fill="#080f21" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="515" y="98" font-family="-apple-system, sans-serif" font-weight="bold" font-size="13" fill="#ffffff">Adaptive Performance Telemetry</text>
+
+  <!-- Mode Card -->
+  <rect x="515" y="115" width="245" height="85" rx="8" fill="#181308" stroke="#d97706" stroke-width="1"/>
+  <text x="525" y="136" font-family="-apple-system, sans-serif" font-weight="bold" font-size="11" fill="#fde68a">ACCESSIBILITY ASSIST MODE: ON</text>
+  <text x="525" y="155" font-family="-apple-system, sans-serif" font-size="10" fill="#fef3c7">User input: Melody line only (Single hand)</text>
+  <text x="525" y="172" font-family="-apple-system, sans-serif" font-weight="600" font-size="10" fill="#60a5fa">Robot Action: Real-time harmonic chord fill</text>
+  <text x="525" y="188" font-family="monospace" font-size="9" fill="#94a3b8">Synchronization jitter: &lt; 2.1 ms</text>
+
+  <!-- Velocity & Dynamics Meter -->
+  <rect x="515" y="210" width="245" height="75" rx="8" fill="#0f172a" stroke="#1e293b"/>
+  <text x="525" y="231" font-family="-apple-system, sans-serif" font-size="10" fill="#94a3b8">KEY STRIKE DYNAMICS (VELOCITY)</text>
+  <text x="525" y="258" font-family="-apple-system, sans-serif" font-weight="bold" font-size="18" fill="#f59e0b">88 (Mezzo-Forte mf)</text>
+  <text x="525" y="275" font-family="monospace" font-size="9" fill="#34d399">PWM Duty Cycle: 68% • 12V High-Speed</text>
+
+  <!-- MIDI Stream Terminal -->
+  <rect x="515" y="295" width="245" height="165" rx="8" fill="#030712" stroke="#1e293b"/>
+  <text x="525" y="318" font-family="monospace" font-size="10" fill="#38bdf8">[MIDI IN] NoteOn: 60 (C4) Vel: 84</text>
+  <text x="525" y="338" font-family="monospace" font-size="10" fill="#f59e0b">[LSTM MODEL] Predicted Chord: C Major</text>
+  <text x="525" y="358" font-family="monospace" font-size="10" fill="#34d399">[ACTUATOR 3] Strike E4 (Key 64)</text>
+  <text x="525" y="378" font-family="monospace" font-size="10" fill="#34d399">[ACTUATOR 5] Strike G4 (Key 67)</text>
+  <text x="525" y="398" font-family="monospace" font-size="10" fill="#60a5fa">[AUDIO SYNC] Polyphonic sound verified</text>
+  <text x="525" y="425" font-family="monospace" font-size="9" fill="#a855f7">✔ Acoustic latency: 18.4ms (Indiscernible)</text>
+</svg>

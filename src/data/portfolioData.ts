@@ -39,7 +39,7 @@ export const portfolioConfig = {
     title: "Full-Stack Software Engineer & Freelancer",
     badge: "Available for Software, LIS, AI & IoT Projects",
     location: "Sri Lanka / Remote",
-    bio: "Software Engineering graduate at General Sir John Kotelawala Defence University (KDU). Creator of AimPointAI (KDU Honours Thesis: Deep Learning Pose Estimation for Sports Biomechanics), MediLIS (Clinical Laboratory Analyzer System with CLSI LIS2-A / ASTM protocols for Selectra Pro M & PKL-125), and SensoPath (IoT Assistive Footwear for Deafblind individuals).",
+    bio: "Software Engineering graduate at General Sir John Kotelawala Defence University (KDU). Creator of AimPointAI (KDU Honours Thesis: Deep Learning Pose Estimation for Sports Biomechanics), MediLIS (Clinical Laboratory Analyzer System with CLSI LIS2-A / ASTM protocols for Selectra Pro M & PKL-125), Piano Playing Robot (KDU FYP: Adaptive Robotic Assistive Solenoid Actuator), and SensoPath (IoT Assistive Footwear for Deafblind individuals).",
     yearsExperience: "3+",
     projectsCompleted: "15+",
     clientSatisfaction: "100%",
@@ -117,6 +117,46 @@ export const portfolioConfig = {
         "Real-time 33-keypoint skeleton pose estimation and kinematic angle tracking",
         "Instant mistake detection: elbow flare, knee dip, and release trajectory",
         "Automated audio-visual coaching cues delivered in under 20ms"
+      ]
+    },
+    {
+      id: "piano-robot-fyp",
+      title: "FYP: Adaptive Robotic Assistance for Piano Playing",
+      tagline: "KDU Final Year Project: Robotic piano assistant enhancing accessibility for individuals with disabilities",
+      description: "Final Year Project (FYP) for Bachelor of Computer Engineering at General Sir John Kotelawala Defence University (KDU), Registration No. D_BCE_22_0022. An adaptive robotic piano playing system combining multi-actuator solenoid key strikers, real-time MIDI parsing, and LSTM musical accompaniment models to assist motor-impaired individuals.",
+      category: "Mobile / Tools",
+      tags: ["FYP (KDU)", "Robotics", "Embedded C++", "Microcontrollers", "MIDI Protocol", "LSTM Music Gen", "Assistive Tech", "Kinematics"],
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
+      featured: true,
+      prototypeImage: "/prototypes/piano-robot.svg",
+      role: "Lead Robotics & Embedded Software Engineer (KDU FYP)",
+      timeline: "KDU Final Year Project (2026)",
+      clientOrContext: "KDU Faculty of Computing & Engineering • Assistive Robotics",
+      problem: "Individuals with upper-limb motor disabilities, tremor disorders, or missing digits face insurmountable physical barriers when playing acoustic pianos without adaptive physical accompaniment.",
+      solution: "Engineered an adaptive robotic key striker array governed by an ESP32 microcontroller and real-time LSTM accompaniment model that dynamically strikes acoustic piano keys to harmonize with human keystrokes in real time.",
+      whatIDid: [
+        "Designed and fabricated the overhead multi-actuator solenoid gantry calibrated for standard acoustic piano key pitch and travel distance.",
+        "Programmed embedded C++ firmware for PWM strike velocity modulation (0-127 dynamics from pianissimo to fortissimo).",
+        "Developed real-time MIDI event parser interpreting note-on/off signals, timing clocks, and tempo fluctuations.",
+        "Trained an LSTM predictive accompaniment model that dynamically generates harmonic chords matching player melody.",
+        "Conducted acoustic latency tests, achieving sub-20ms strike response from MIDI signal to acoustic sound output."
+      ],
+      keyMetrics: [
+        "Sub-20ms key strike response from MIDI trigger to acoustic sound",
+        "Full 0-127 MIDI dynamic velocity control for expressive acoustic volume",
+        "Dual Accessibility Assist and Novice Tutorial playing modes"
+      ],
+      architecture: [
+        "ESP32 / STM32 microcontroller with high-current MOSFET driver array",
+        "Low-noise 12V push-pull solenoid actuators with silicone contact dampeners",
+        "MIDI 1.0 / USB-MIDI asynchronous communication protocol parser",
+        "PyTorch LSTM musical sequence generation engine for real-time chord filling"
+      ],
+      highlights: [
+        "Robotic solenoid actuation array for acoustic piano keys",
+        "Real-time MIDI harmonic chord fill for motor-impaired players",
+        "Sub-20ms acoustic response with dynamic velocity control"
       ]
     },
     {

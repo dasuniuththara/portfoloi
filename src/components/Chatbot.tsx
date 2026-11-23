@@ -44,16 +44,17 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
   const initialBotMessage: ChatMessage = {
     id: "welcome-1",
     sender: "bot",
-    text: `Hi there! 👋 I'm Dasuni's Portfolio AI Assistant. You can ask me about Dasuni's real projects: MediLIS (Medical Analyzer Integration), AimPoint AI (Neural Vision & Targeting), SensoPath (KDU Final Year Project), or Workshop Inventory!`,
+    text: `Hi there! 👋 I'm Dasuni's Portfolio AI Assistant. You can ask me about Dasuni's real projects: MediLIS (Medical Analyzer Integration), AimPoint AI (Neural Pose & Mistake Detection), Piano Playing Robot (KDU FYP), SensoPath (Smart Assistive Footwear), or Workshop Inventory!`,
     timestamp: "Just now"
   };
 
   const [messages, setMessages] = useState<ChatMessage[]>([initialBotMessage]);
 
   const quickPrompts = [
+    { label: "🎹 Piano Playing Robot (FYP)", query: "Tell me about Dasuni's Piano Playing Robot FYP" },
     { label: "🔬 MediLIS & Selectra Pro M", query: "Tell me about MediLIS and medical analyzer integration" },
-    { label: "🎯 AimPoint AI Vision", query: "Tell me about AimPoint AI computer vision and target tracking" },
-    { label: "👟 FYP: Smart Shoes for Deafblind", query: "Tell me about Dasuni's KDU Final Year Project (FYP)" },
+    { label: "🎯 AimPoint AI Vision", query: "Tell me about AimPoint AI computer vision and basketball mistake detection" },
+    { label: "👟 SensoPath Smart Shoes", query: "Tell me about Dasuni's assistive footwear project" },
     { label: "📦 Workshop Inventory Tracker", query: "Tell me about Mediccon workshop inventory and barcode tracking" },
     { label: "🚀 All Real Projects & Prototypes", query: "What projects did Dasuni build?" },
     { label: "💻 Technical Stack & Protocols", query: "What technologies, protocols, and stack does Dasuni use?" },
@@ -76,6 +77,18 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
 
   const generateAnswer = (userQuery: string): { text: string; actionButton?: ChatMessage["actionButton"] } => {
     const q = userQuery.toLowerCase().trim();
+
+    // 0. Piano Playing Robot (KDU FYP)
+    if (q.includes("piano") || q.includes("robot") || q.includes("robo") || q.includes("pianist") || q.includes("solenoid") || q.includes("piono")) {
+      return {
+        text: `**Adaptive Robotic Assistance for Piano Playing** is Dasuni's KDU Final Year Project (Reg: D_BCE_22_0022):\n• **Assistive Key Actuation:** Engineered a multi-solenoid actuator gantry that mechanically strikes acoustic piano keys to empower individuals with motor disabilities and hand impairments.\n• **Real-Time MIDI & Velocity:** Integrated MIDI 1.0 protocol parsing and PWM velocity modulation (0-127 dynamics) for sub-20ms acoustic response.\n• **LSTM Accompaniment Neural Model:** Dynamically generates harmonic accompaniment chords to complement the player's melody in real time.\n• **Dual Modes:** Features both Accessibility Assist mode and Novice Tutorial interactive mode.`,
+        actionButton: {
+          label: "Inspect Piano Robot FYP Prototype",
+          actionType: "project",
+          projectId: "piano-robot-fyp"
+        }
+      };
+    }
 
     // 1. MediLIS & Medical Analyzer Integration
     if (q.includes("medilis") || q.includes("lis") || q.includes("analyzer") || q.includes("selectra") || q.includes("pkl") || q.includes("astm") || q.includes("lab")) {
