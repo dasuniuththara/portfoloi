@@ -27,6 +27,13 @@ interface ProjectModalProps {
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [activeTab, setActiveTab] = useState<"prototype" | "contribution" | "architecture">("prototype");
 
+  // Reset tab to prototype whenever a new project is selected
+  useEffect(() => {
+    if (project) {
+      setActiveTab("prototype");
+    }
+  }, [project]);
+
   // Close on Escape key press
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -44,11 +51,15 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   if (!project) return null;
 
+  const hasRealExternalDemo =
+    project.demoUrl &&
+    !project.demoUrl.includes("example.com");
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 animate-fadeIn">
       {/* Backdrop overlay */}
       <div
-        className="fixed inset-0 bg-slate-950/80 backdrop-blur-md transition-opacity"
+        className="fixed inset-0 bg-slate-950/85 backdrop-blur-md transition-opacity"
         onClick={onClose}
       />
 
@@ -128,11 +139,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <div className="w-3 h-3 rounded-full bg-amber-500/80" />
                     <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
                     <span className="text-xs font-mono text-slate-400 ml-2">
-                      {project.title.toLowerCase().replace(/\s+/g, "-")}.prototype.preview
+                      {project.title.toLowerCase().replace(/\s+/g, "-")}.prototype.view
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-cyan-400 font-medium">
-                    ● High-Fidelity UI Prototype
+                  <span className="text-[11px] font-mono text-emerald-400 font-medium">
+                    ● Real High-Fidelity Prototype
                   </span>
                 </div>
 
@@ -159,7 +170,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
                   <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-1">
                     <Clock className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Timeline & Sprint</span>
+                    <span>Timeline & Context</span>
                   </div>
                   <div className="text-sm font-bold text-white">{project.timeline}</div>
                 </div>
@@ -167,7 +178,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
                   <div className="flex items-center gap-2 text-xs font-semibold text-slate-400 mb-1">
                     <Layers className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Context / Client</span>
+                    <span>Environment / Domain</span>
                   </div>
                   <div className="text-sm font-bold text-white">{project.clientOrContext}</div>
                 </div>
@@ -234,7 +245,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <div>
                 <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-2">
                   <BarChart3 className="w-4 h-4 text-cyan-400" />
-                  <span>Quantified Business & Technical Impact</span>
+                  <span>Quantified Results & Performance Benchmarks</span>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   {project.keyMetrics.map((metric, idx) => (
@@ -297,10 +308,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 hover:text-white border border-slate-700 transition-colors"
             >
               <GithubIcon className="w-4 h-4" />
-              <span>GitHub Repo</span>
+              <span>GitHub Code</span>
             </a>
 
-            {project.demoUrl && (
+            {hasRealExternalDemo ? (
               <a
                 href={project.demoUrl}
                 target="_blank"
@@ -308,8 +319,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 transition-colors"
               >
                 <ExternalLink className="w-4 h-4" />
-                <span>Live Demo</span>
+                <span>Live Site</span>
               </a>
+            ) : (
+              <button
+                onClick={() => setActiveTab("prototype")}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-400 bg-emerald-950/60 border border-emerald-800/60"
+              >
+                <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Interactive Prototype Loaded</span>
+              </button>
             )}
           </div>
 
@@ -318,7 +337,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             onClick={onClose}
             className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-cyan-400 hover:text-cyan-300"
           >
-            <span>Need a similar solution? Discuss with me</span>
+            <span>Need a similar solution? Discuss with Dasuni</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </a>
         </div>

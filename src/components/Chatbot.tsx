@@ -44,19 +44,19 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
   const initialBotMessage: ChatMessage = {
     id: "welcome-1",
     sender: "bot",
-    text: `Hi there! 👋 I'm Dasuni's Portfolio AI Assistant. You can ask me about Dasuni's technical experience, recent project prototypes, freelance availability, or how to get in touch!`,
+    text: `Hi there! 👋 I'm Dasuni's Portfolio AI Assistant. You can ask me about Dasuni's real engineering work: Mediccon LIS & Analyzer Drivers, SensoPath IoT Smart Footwear, Workshop Inventory systems, or full-stack software!`,
     timestamp: "Just now"
   };
 
   const [messages, setMessages] = useState<ChatMessage[]>([initialBotMessage]);
 
   const quickPrompts = [
-    { label: "🚀 Top Projects & Prototypes", query: "Tell me about Dasuni's top projects and prototypes" },
-    { label: "💻 Tech Stack & Skills", query: "What technologies and stack does Dasuni use?" },
-    { label: "🔍 What did you do on DevMetrics?", query: "What did Dasuni do in DevMetrics dashboard?" },
-    { label: "🛍️ ShopSphere E-Commerce", query: "Tell me about ShopSphere and what was built" },
-    { label: "💼 Freelance & Availability", query: "Is Dasuni available for freelance projects?" },
-    { label: "📅 Book a Call", query: "How do I schedule a call or hire Dasuni?" }
+    { label: "🔬 Mediccon LIS & Selectra Pro M", query: "Tell me about Mediccon LIS and medical analyzer integration" },
+    { label: "👟 SensoPath IoT Smart Shoes", query: "Tell me about SensoPath smart shoes for the deafblind" },
+    { label: "📦 Workshop Inventory Tracker", query: "Tell me about Mediccon workshop inventory and barcode tracking" },
+    { label: "🚀 All Real Projects & Prototypes", query: "What real projects did Dasuni build?" },
+    { label: "💻 Technical Stack & Protocols", query: "What technologies, protocols, and stack does Dasuni use?" },
+    { label: "📅 Contact & Availability", query: "How do I contact or hire Dasuni?" }
   ];
 
   // Auto-scroll to bottom of chat
@@ -76,11 +76,46 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
   const generateAnswer = (userQuery: string): { text: string; actionButton?: ChatMessage["actionButton"] } => {
     const q = userQuery.toLowerCase().trim();
 
-    // 1. DevMetrics Project
-    if (q.includes("devmetrics") || q.includes("metrics") || q.includes("saas")) {
-      const proj = portfolioConfig.projects.find((p) => p.id === "saas-flow");
+    // 1. Mediccon LIS & Medical Analyzer Integration
+    if (q.includes("mediccon") || q.includes("lis") || q.includes("analyzer") || q.includes("selectra") || q.includes("astm") || q.includes("lab")) {
       return {
-        text: `In **DevMetrics Analytics Dashboard**, Dasuni architected an end-to-end real-time SaaS platform. Key work included:\n• Slashing P99 query latency from 3.5s to 42ms with PostgreSQL materialized views\n• Building high-frequency vector charts with sub-100ms render speeds\n• Implementing multi-tenant role permissions & automated PDF reporting digests.`,
+        text: `**Mediccon LIS** is a clinical Laboratory Information System built by Dasuni for hospitals and diagnostic labs:\n• **CLSI LIS2-A & ASTM Drivers:** Custom bidirectional communication driver with ENQ/ACK handshaking and frame-by-frame acknowledgment for the **Selectra Pro M** analyzer.\n• **Hardware Ports:** Connects analyzers over RS232 serial COM ports and Ethernet TCP/IP.\n• **Barcode Tube Ingestion:** Automated Code-128 barcode label generator for test tubes using jsbarcode.\n• **Results & Billing:** Real-time test result ingestion, normal range validation, diagnostic invoicing, and SQLite caching.`,
+        actionButton: {
+          label: "Inspect Mediccon LIS Prototype & Details",
+          actionType: "project",
+          projectId: "mediccon-lis"
+        }
+      };
+    }
+
+    // 2. SensoPath IoT Smart Shoes
+    if (q.includes("sensopath") || q.includes("shoe") || q.includes("deafblind") || q.includes("iot") || q.includes("hardware") || q.includes("haptic") || q.includes("sensor")) {
+      return {
+        text: `**SensoPath** is an IoT assistive wearable engineered by Dasuni for deafblind individuals at KDU:\n• **Dual Ultrasonic Proximity Scanning:** Scans for obstacles from 0.1m to 3.5m in real time with sub-25ms response.\n• **Bilateral Haptic Directional Cues:** Left/right vibration motors guide tactile steering without any audio dependence.\n• **ESP32 Firmware & BLE 5.0:** Streams telemetry, battery status, and hazard alerts to a paired mobile app.\n• **Autonomous Battery Life:** Low-power sleep calibration delivers over 18 hours of continuous operation.`,
+        actionButton: {
+          label: "Inspect SensoPath Hardware Prototype",
+          actionType: "project",
+          projectId: "smart-shoes-iot"
+        }
+      };
+    }
+
+    // 3. Mediccon Workshop Inventory & Barcode Tracker
+    if (q.includes("workshop") || q.includes("inventory") || q.includes("barcode") || q.includes("gps") || q.includes("asset") || q.includes("tool")) {
+      return {
+        text: `**Mediccon Workshop Inventory System** is a desktop application authored by Dasuni:\n• **Barcode Asset Scanning:** Instant physical barcode scanner input matching (e.g., WS-00124) with <10ms lookup.\n• **HQ GPS Telemetry:** Visualizes equipment located at Mediccon Headquarters (Sri Jayawardenepura Kotte, 6.8851° N, 79.9071° E).\n• **Staff Custody Management:** Tracks who checked out testing tools, calipers, multimeters, and soldering stations.\n• **Safe Storage Engine:** Robust localStorage serialization with automatic corruption detection and fallback recovery.`,
+        actionButton: {
+          label: "View Workshop Inventory Prototype",
+          actionType: "project",
+          projectId: "workshop-inventory"
+        }
+      };
+    }
+
+    // 4. DevMetrics SaaS Project
+    if (q.includes("devmetrics") || q.includes("metrics") || q.includes("saas")) {
+      return {
+        text: `In **DevMetrics Analytics Dashboard**, Dasuni architected a real-time full-stack analytics platform:\n• Slashing P99 query latency down to 42ms with PostgreSQL materialized views\n• Building high-frequency vector charts with sub-100ms render speeds\n• Implementing multi-tenant role permissions & automated PDF reporting digests.`,
         actionButton: {
           label: "Inspect DevMetrics Prototype & Details",
           actionType: "project",
@@ -89,7 +124,7 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
       };
     }
 
-    // 2. ShopSphere E-Commerce Project
+    // 5. ShopSphere E-Commerce Project
     if (q.includes("shopsphere") || q.includes("shop") || q.includes("ecommerce") || q.includes("e-commerce") || q.includes("store")) {
       return {
         text: `On **ShopSphere**, Dasuni engineered a high-conversion headless e-commerce store:\n• Client-side fuzzy search across 10,000+ SKUs with <15ms response\n• Seamless Stripe Checkout with secure webhook verification\n• Achieved 98+ Google Lighthouse scores and +38% cart-to-checkout conversion.`,
@@ -101,19 +136,7 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
       };
     }
 
-    // 3. SyncPulse Kanban Project
-    if (q.includes("syncpulse") || q.includes("kanban") || q.includes("task") || q.includes("drag")) {
-      return {
-        text: `For **SyncPulse**, Dasuni built an agile task manager featuring:\n• 60 FPS fluid drag-and-drop physics with keyboard accessibility via @dnd-kit\n• Sub-10ms conflict resolution and optimistic state caching with Zustand\n• Markdown task descriptions with custom priority and sprint metrics.`,
-        actionButton: {
-          label: "View SyncPulse Prototype",
-          actionType: "project",
-          projectId: "task-collab"
-        }
-      };
-    }
-
-    // 4. CloudVault Backend API
+    // 6. CloudVault Backend API
     if (q.includes("cloudvault") || q.includes("api") || q.includes("backend") || q.includes("storage")) {
       return {
         text: `On **CloudVault API**, Dasuni designed a production-ready microservice backend:\n• JWT authentication with token rotation & Redis rate-limiting\n• S3 presigned upload URLs for high-throughput zero-memory file streaming\n• 99.99% uptime with OpenAPI 3.1 Swagger docs and complete Jest/Supertest suites.`,
@@ -125,34 +148,10 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
       };
     }
 
-    // 5. PromptForge AI Studio
-    if (q.includes("promptforge") || q.includes("prompt") || q.includes("ai") || q.includes("llm")) {
-      return {
-        text: `In **PromptForge Studio**, Dasuni created an LLM playground for engineers:\n• Side-by-side comparative model response streaming (Claude 3.5 Sonnet vs GPT-4o)\n• Real-time token counter and provider pricing calculator\n• Monaco Code Editor with one-click SDK export in Python, JavaScript, and cURL.`,
-        actionButton: {
-          label: "Inspect PromptForge Prototype",
-          actionType: "project",
-          projectId: "ai-prompt-studio"
-        }
-      };
-    }
-
-    // 6. RepoScout CLI
-    if (q.includes("reposcout") || q.includes("cli") || q.includes("terminal") || q.includes("tool")) {
-      return {
-        text: `Dasuni developed **RepoScout**, an open-source GitHub audit CLI:\n• Full repository health and vulnerability audit in under 2.5 seconds\n• Automated semver changelog generator from conventional git commit messages\n• Over 500+ npm downloads and GitHub Actions multi-OS CI testing.`,
-        actionButton: {
-          label: "View RepoScout Prototype",
-          actionType: "project",
-          projectId: "dev-cli-toolkit"
-        }
-      };
-    }
-
     // 7. All Projects Overview
-    if (q.includes("project") || q.includes("portfolio") || q.includes("work") || q.includes("built") || q.includes("prototypes")) {
+    if (q.includes("project") || q.includes("portfolio") || q.includes("work") || q.includes("built") || q.includes("prototypes") || q.includes("real")) {
       return {
-        text: `Dasuni has built 6 featured full-stack applications & tools with interactive UI prototypes:\n1. **DevMetrics** (SaaS Analytics Dashboard)\n2. **ShopSphere** (Headless E-Commerce + Stripe)\n3. **SyncPulse** (Agile Drag & Drop Kanban)\n4. **CloudVault** (Secure Auth & S3 Storage API)\n5. **PromptForge** (Side-by-Side LLM Studio)\n6. **RepoScout** (GitHub Health & Changelog CLI)\n\nClick on any project card above to view the full UI prototype and exact technical contributions!`,
+        text: `Here are the real engineering projects Dasuni built, complete with interactive prototypes:\n1. **Mediccon LIS** (Laboratory Information System & Selectra Pro M Analyzer Driver)\n2. **SensoPath IoT Footwear** (Assistive Smart Shoes for Deafblind Individuals)\n3. **Mediccon Workshop Inventory** (Barcode Scanner & HQ GPS Asset Tracker)\n4. **DevMetrics** (Real-Time SaaS Analytics Dashboard)\n5. **ShopSphere** (Headless Storefront + Stripe)\n6. **CloudVault** (Secure Auth & S3 Storage API)\n\nClick on any project card to inspect what Dasuni built and view the prototype!`,
         actionButton: {
           label: "Scroll to Projects Section",
           actionType: "contact",
@@ -161,10 +160,10 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
       };
     }
 
-    // 8. Tech Stack / Skills
-    if (q.includes("stack") || q.includes("tech") || q.includes("skill") || q.includes("react") || q.includes("next") || q.includes("node") || q.includes("python") || q.includes("database")) {
+    // 8. Tech Stack / Skills / Protocols
+    if (q.includes("stack") || q.includes("tech") || q.includes("skill") || q.includes("protocol") || q.includes("react") || q.includes("next") || q.includes("node") || q.includes("python") || q.includes("database") || q.includes("esp32")) {
       return {
-        text: `Dasuni's core technical stack includes:\n• **Frontend:** Next.js 16, React 19, TypeScript, Tailwind CSS, Zustand\n• **Backend:** Node.js, Express, Python (FastAPI), REST & GraphQL APIs\n• **Databases & Cloud:** PostgreSQL (Prisma), MongoDB, Redis, Docker, Supabase, Vercel\n• **Engineering:** Clean Architecture, Automated Testing (Jest), CI/CD Actions, WCAG Accessibility.`,
+        text: `Dasuni's technical engineering skills include:\n• **Healthcare & Protocols:** CLSI LIS2-A, ASTM, HL7, Serial RS232, TCP/IP, Code-128 Barcodes\n• **Hardware & IoT:** Embedded C/C++, ESP32, Arduino, Ultrasonic Sensor Fusion, BLE 5.0\n• **Desktop & Web:** Electron, React, Next.js, Node.js, Tailwind CSS, Zustand\n• **Databases & DevOps:** SQLite (better-sqlite3), PostgreSQL, Docker, Git, RESTful APIs.`,
         actionButton: {
           label: "Explore Tech Stack Matrix",
           actionType: "contact",
@@ -176,7 +175,7 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
     // 9. Availability / Hire / Freelance / Pricing
     if (q.includes("available") || q.includes("hire") || q.includes("freelance") || q.includes("contract") || q.includes("price") || q.includes("rate") || q.includes("cost") || q.includes("turnaround")) {
       return {
-        text: `Yes! Dasuni is currently **available for new freelance contracts, MVP builds, and engineering roles**.\n\n• **Standard MVPs:** 2 to 4 weeks delivery with weekly sprint demos\n• **Landing Pages & Portfolios:** 3 to 5 days\n• **Agile Communication:** Async-first via Slack/Discord, weekly syncs, NDA guaranteed.`,
+        text: `Yes! Dasuni is open for **freelance contracts, clinical LIS integrations, full-stack software, and IoT engineering collaborations**.\n\n• **Standard MVPs & Portals:** 1 to 3 weeks delivery with milestones\n• **Analyzer Drivers & LIS Modules:** Custom timeline based on hardware protocol\n• **Communication:** Async-first via Email, Slack, or Discord with video sprint demos.`,
         actionButton: {
           label: "Book a Discovery Call via Calendly",
           actionType: "calendly",
@@ -188,7 +187,7 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
     // 10. Contact / Call / Email
     if (q.includes("contact") || q.includes("email") || q.includes("call") || q.includes("meeting") || q.includes("reach") || q.includes("schedule")) {
       return {
-        text: `You can reach Dasuni directly via:\n• **Email:** ${portfolioConfig.personal.email}\n• **Calendly:** Instant video call booking\n• **LinkedIn:** ${portfolioConfig.personal.linkedin}\n• **GitHub:** ${portfolioConfig.personal.github}`,
+        text: `You can reach Dasuni directly via:\n• **Email:** ${portfolioConfig.personal.email}\n• **GitHub:** ${portfolioConfig.personal.github}\n• **LinkedIn:** ${portfolioConfig.personal.linkedin}\n• **Location:** Sri Lanka (Open to remote worldwide)`,
         actionButton: {
           label: "Open Inquiry Form",
           actionType: "contact",
@@ -199,7 +198,7 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
 
     // Default Fallback
     return {
-      text: `Thanks for asking! Dasuni is a Full-Stack Software Engineer specializing in modern Next.js/React applications, high-performance backends, and responsive UI design with clean architecture.\n\nWould you like to explore Dasuni's project prototypes, check out the tech stack, or discuss a freelance project?`,
+      text: `Thanks for asking! Dasuni is a Computer Engineering undergraduate at KDU specializing in clinical Laboratory Information Systems (Mediccon LIS), IoT assistive hardware (SensoPath), and full-stack software.\n\nWould you like to inspect the Mediccon LIS analyzer driver, view the SensoPath IoT prototype, or discuss a project?`,
       actionButton: {
         label: "Discuss a Project",
         actionType: "contact",
@@ -269,7 +268,7 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
           </div>
           <div className="text-left hidden sm:block">
             <div className="text-xs font-bold leading-tight">Ask Dasuni AI</div>
-            <div className="text-[10px] text-cyan-100/90 font-mono">Prototypes &amp; Info</div>
+            <div className="text-[10px] text-cyan-100/90 font-mono">Real Projects &amp; Info</div>
           </div>
           {hasUnread && (
             <span className="flex h-2.5 w-2.5 relative">
@@ -397,7 +396,7 @@ export default function Chatbot({ onSelectProject }: ChatbotProps) {
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                placeholder="Ask about projects, prototypes, or stack..."
+                placeholder="Ask about Mediccon LIS, SensoPath, or Workshop..."
                 className="flex-1 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs sm:text-sm text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500"
               />
               <button

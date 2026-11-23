@@ -21,6 +21,11 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    const subject = encodeURIComponent(`Project Inquiry: ${formData.projectType} from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Hi Dasuni,\n\nName: ${formData.name}\nEmail: ${formData.email}\nProject Type: ${formData.projectType}\nBudget: ${formData.budget}\n\nProject Details:\n${formData.message}`
+    );
+    window.location.href = `mailto:${personal.email}?subject=${subject}&body=${body}`;
   };
 
   return (

@@ -37,13 +37,13 @@ export const portfolioConfig = {
   personal: {
     name: "Dasuni Uththara",
     title: "Full-Stack Software Engineer & Freelancer",
-    badge: "Available for New Freelance Projects",
-    location: "Global / Remote",
-    bio: "I build fast, scalable, and user-centric web applications. Helping startups and businesses turn ideas into production-ready software with clean code, modern UI prototypes, and reliable architecture.",
+    badge: "Available for Software, LIS & Web Projects",
+    location: "Sri Lanka / Remote",
+    bio: "Computer Engineering undergraduate at General Sir John Kotelawala Defence University (KDU). I specialize in healthcare software systems (Mediccon LIS & HL7/ASTM analyzer integration), IoT assistive hardware (SensoPath), and high-performance full-stack web platforms.",
     yearsExperience: "3+",
-    projectsCompleted: "20+",
+    projectsCompleted: "12+",
     clientSatisfaction: "100%",
-    email: "dasuni@example.com",
+    email: "dasuni0128uththara@gmail.com",
     github: "https://github.com/dasuniuththara",
     linkedin: "https://linkedin.com/in/dasuniuththara",
     twitter: "https://twitter.com",
@@ -53,58 +53,178 @@ export const portfolioConfig = {
   services: [
     {
       icon: "Code2",
-      title: "Full-Stack Web Development",
-      description: "End-to-end web applications built from scratch using modern stacks. Fast, secure, and ready to scale with your user base.",
-      deliverables: ["Custom Next.js/React web apps", "Relational & NoSQL database schemas", "Authentication & Role-based Access", "Payment gateways (Stripe, etc.)"],
+      title: "Healthcare Software & LIS Integration",
+      description: "Laboratory Information Systems, medical analyzer serial/TCP communication (CLSI LIS2-A, ASTM, HL7), and diagnostic report automation.",
+      deliverables: ["Analyzer hardware communication drivers", "ASTM & LIS2-A protocol parsing", "Barcode sample registration & tracking", "Patient medical history & diagnostic billing"],
+    },
+    {
+      icon: "Cpu",
+      title: "IoT & Embedded Systems",
+      description: "Sensor integration, microcontrollers (ESP32 / Arduino), BLE telemetry, and real-time assistive hardware design.",
+      deliverables: ["Ultrasonic & IMU sensor fusion", "Haptic actuator control firmware", "Bluetooth Low Energy (BLE) protocols", "Hardware-to-cloud telemetry pipelines"],
     },
     {
       icon: "Layout",
-      title: "Modern Frontend & UI/UX",
-      description: "Pixel-perfect, responsive web interfaces with smooth animations, mobile-first design, interactive prototypes, and optimal accessibility.",
-      deliverables: ["Responsive mobile & desktop design", "Tailwind CSS & Component libraries", "Performance & SEO optimization", "Interactive dashboards & portals"],
+      title: "Full-Stack Web & Desktop Apps",
+      description: "Fast, responsive web and desktop applications built with Electron, Next.js, React, Node.js, and SQLite / PostgreSQL databases.",
+      deliverables: ["Electron desktop application development", "Next.js & React web platforms", "Tailwind CSS responsive design", "Database architecture & optimization"],
     },
     {
       icon: "Server",
-      title: "API & Backend Architecture",
-      description: "High-performance RESTful and GraphQL APIs, microservices, cloud serverless functions, and third-party integrations.",
-      deliverables: ["Scalable REST & GraphQL APIs", "Database optimization & indexing", "Secure webhook & third-party integrations", "Automated unit & integration tests"],
-    },
-    {
-      icon: "Rocket",
-      title: "MVP Launch for Startups",
-      description: "Fast-track development to launch your product idea into the market within weeks instead of months.",
-      deliverables: ["Product architecture consulting", "Rapid sprint execution", "CI/CD automated deployment", "Post-launch maintenance & handoff"],
+      title: "Inventory & Asset Tracking Systems",
+      description: "Custom workshop inventory systems with barcode scanning, GPS telemetry, custody workflows, and stock management.",
+      deliverables: ["Physical barcode reader integration", "GPS coordinate mapping & tracking", "Staff custody & check-out workflows", "Real-time stock alerts & audit logs"],
     },
   ],
 
   projects: [
     {
+      id: "mediccon-lis",
+      title: "Mediccon LIS - Laboratory Information System & Analyzer Hub",
+      tagline: "Automated clinical analyzer interface with CLSI LIS2-A / ASTM protocols & barcode tracking",
+      description: "A clinical diagnostic platform that connects laboratory analyzer hardware (Selectra Pro M, Sysmex, Mindray) via RS232 serial ports and Ethernet TCP/IP. Features automated sample registration, Code-128 barcode generation, test result ingestion, normal range validation, and diagnostic billing.",
+      category: "Full-Stack",
+      tags: ["Electron", "React", "Node.js", "SQLite", "SerialPort (RS232)", "Tailwind CSS", "ASTM / LIS2-A"],
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
+      featured: true,
+      prototypeImage: "/prototypes/mediccon-health.svg",
+      role: "Lead Software & Protocol Integration Engineer",
+      timeline: "Mediccon Health Production Project",
+      clientOrContext: "Mediccon Diagnostic Laboratories & Hospital Clinics",
+      problem: "Manual transcription of clinical analyzer readings was causing human errors, slow patient report turnaround, and tube sample misidentification.",
+      solution: "Engineered a desktop LIS communicating directly with laboratory analyzers via custom LIS2-A ASTM protocol drivers, with SQLite local database caching and automated barcode tube printing.",
+      whatIDid: [
+        "Developed custom CLSI LIS2-A and ASTM communication driver supporting ENQ/ACK handshaking and frame-by-frame acknowledgment.",
+        "Integrated Selectra Pro M, Sysmex, and Mindray analyzers over RS232 serial COM ports and Ethernet TCP/IP.",
+        "Built full desktop UI in Electron, React, and Tailwind CSS with real-time Analyzer Hub status cards.",
+        "Implemented sample tube registration with Code-128 barcode label generation using jsbarcode.",
+        "Engineered diagnostic test billing, receipt generator, and patient result verification flows with SQLite database."
+      ],
+      keyMetrics: [
+        "Zero manual transcription errors with direct bidirectional analyzer links",
+        "Sub-100ms test result ingestion over RS232 serial COM ports",
+        "100% compliant with CLSI LIS2-A and ASTM communication standards"
+      ],
+      architecture: [
+        "Electron desktop runtime with multi-process architecture (Main / Renderer)",
+        "SerialPort Node.js library for low-level RS232 hardware communications",
+        "better-sqlite3 for high-throughput zero-latency local database storage",
+        "Tailwind CSS custom responsive medical dashboard UI"
+      ],
+      highlights: [
+        "Direct RS232 / Ethernet analyzer driver for Selectra Pro M",
+        "Real-time ENQ/ACK handshaking and ASTM frame parser",
+        "Code-128 barcode tube generator and diagnostic billing"
+      ]
+    },
+    {
+      id: "smart-shoes-iot",
+      title: "SensoPath: Smart Assistive Footwear for Deafblind",
+      tagline: "IoT wearable footwear with multi-directional ultrasonic obstacle detection & haptic feedback",
+      description: "An embedded assistive system designed for visually and hearing-impaired individuals to navigate physical spaces autonomously. Features dual ultrasonic range scanning, bilateral vibration haptic feedback motors, ESP32 microcontroller, and BLE mobile telemetry.",
+      category: "Mobile / Tools",
+      tags: ["IoT", "Embedded C++", "ESP32", "BLE 5.0", "Sensor Fusion", "Hardware Prototyping"],
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
+      featured: true,
+      prototypeImage: "/prototypes/smart-shoes-iot.svg",
+      role: "Lead Hardware & Firmware Engineer",
+      timeline: "KDU Computer Engineering Research",
+      clientOrContext: "Assistive Technology & KDU Engineering Research",
+      problem: "Deafblind individuals cannot rely on acoustic beeps or visual alerts, leaving them vulnerable to ground-level curbs, low obstacles, and sudden drop-offs.",
+      solution: "Designed smart footwear with dual ultrasonic rangefinders and bilateral haptic actuators that translate obstacle distances into proportional tactile vibration pulses.",
+      whatIDid: [
+        "Engineered embedded C++ firmware for ESP32 microcontroller governing real-time distance telemetry up to 3.5m.",
+        "Integrated bilateral micro-vibration haptic motors with PWM duty-cycle modulation for tactile steering cues.",
+        "Developed BLE 5.0 GATT communication protocol streaming gait and obstacle telemetry to a mobile app.",
+        "Calibrated low-power sensor sleep cycles providing 18+ hours continuous battery endurance.",
+        "Validated safety benchmarks through obstacle-course trials with research participants."
+      ],
+      keyMetrics: [
+        "Sub-25ms sensor-to-haptic alert response latency",
+        "Accurate hazard detection between 0.1m and 3.5m range",
+        "18+ hours autonomous continuous battery life on Li-ion cell"
+      ],
+      architecture: [
+        "ESP32-WROOM-32D Dual-Core MCU clocked at 240MHz",
+        "Dual HC-SR04 ultrasonic sensor array with noise filtering",
+        "Bilateral ERM haptic actuators with PWM duty-cycle modulation",
+        "GATT BLE 5.0 custom telemetry service with 128-bit UUID"
+      ],
+      highlights: [
+        "Real-time dual ultrasonic proximity sensing (0.1m - 3.5m)",
+        "Bilateral haptic vibration feedback for directional navigation",
+        "BLE mobile telemetry and emergency hazard logging"
+      ]
+    },
+    {
+      id: "workshop-inventory",
+      title: "Mediccon Workshop Inventory & GPS Asset Tracker",
+      tagline: "Desktop asset custody system with barcode scanning and GPS headquarters localization",
+      description: "An asset and equipment tracking desktop application built for Mediccon engineering headquarters. Monitors custody of electronic equipment, precision tools, safety gear, and testing instruments with barcode scanning and GPS tracking.",
+      category: "Full-Stack",
+      tags: ["Electron", "JavaScript", "Leaflet Maps", "Tailwind CSS", "Barcode Scanner", "Local Storage"],
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
+      featured: true,
+      prototypeImage: "/prototypes/workshop-inventory.svg",
+      role: "Full-Stack Developer & Author",
+      timeline: "Mediccon Workshop System",
+      clientOrContext: "Mediccon Engineering Headquarters (Sri Jayawardenepura Kotte)",
+      problem: "Workshop engineering tools and testing instruments were frequently misplaced across departments, lacking custody accountability and real-time stock visibility.",
+      solution: "Constructed an Electron desktop application with rapid barcode checkout/checkin, GPS asset map coordinates for headquarters, and departmental staff custody management.",
+      whatIDid: [
+        "Authored the complete Electron desktop application architecture with custom responsive layout.",
+        "Implemented instant barcode scanning input handler supporting physical barcode readers (e.g. WS-00124).",
+        "Integrated GPS geolocation telemetry displaying equipment location at Mediccon HQ (6.8851° N, 79.9071° E).",
+        "Engineered departmental custody assignment tables and check-out tracking for staff members.",
+        "Built safe storage serialization with automatic corruption detection and fallback recovery."
+      ],
+      keyMetrics: [
+        "98.4% equipment custody tracking accuracy across HQ",
+        "Instant <10ms barcode scan matching across workshop database",
+        "Zero data corruption with safe storage serialization"
+      ],
+      architecture: [
+        "Electron desktop framework with Node.js integration",
+        "Lucide Icons and Tailwind CSS modern dark engineering theme",
+        "Leaflet.js / OpenStreetMap GPS coordinate visualization",
+        "High-reliability localStorage serialization with schema validation"
+      ],
+      highlights: [
+        "Instant physical barcode scanner integration (e.g. WS-00124)",
+        "Mediccon HQ GPS map visualization (Kotte, Sri Lanka)",
+        "Staff custody logs, departmental filters & return records"
+      ]
+    },
+    {
       id: "saas-flow",
       title: "DevMetrics Analytics Dashboard",
       tagline: "Real-time SaaS analytics platform with interactive graphs and team collaboration",
-      description: "A comprehensive analytics suite built for SaaS founders. Tracks active users, revenue metrics, cohort retention, and churn with real-time updates.",
+      description: "A comprehensive analytics suite built for software teams. Tracks active users, telemetry metrics, cohort retention, and system uptime with real-time updates.",
       category: "Full-Stack",
       tags: ["Next.js", "TypeScript", "Tailwind CSS", "Prisma", "PostgreSQL", "Recharts"],
-      githubUrl: "https://github.com/dasuniuththara/devmetrics-dashboard",
-      demoUrl: "https://example.com/demo",
-      featured: true,
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
+      featured: false,
       prototypeImage: "/prototypes/saas-flow.svg",
-      role: "Lead Full-Stack Architect & UI Designer",
-      timeline: "4 Weeks MVP Sprint",
-      clientOrContext: "SaaS Analytics & Founder Operations",
-      problem: "SaaS founders were struggling with disjointed revenue data, slow load times on legacy dashboards (>3.5s), and difficulty tracking real-time user cohort retention.",
-      solution: "Engineered a lightning-fast real-time analytics platform using Next.js 16 and PostgreSQL with pre-aggregated materialized views, cutting query latency to sub-45ms and rendering responsive vector charts.",
+      role: "Full-Stack Architect & UI Designer",
+      timeline: "4 Weeks Sprint",
+      clientOrContext: "Telemetry & Cloud Analytics Platform",
+      problem: "Engineering teams lacked unified dashboards to visualize real-time request velocity, latency spikes, and cohort retention.",
+      solution: "Engineered a real-time analytics platform using Next.js and PostgreSQL with pre-aggregated views, cutting query latency to sub-45ms and rendering responsive vector charts.",
       whatIDid: [
-        "Architected end-to-end responsive UI in Next.js 16 and Tailwind CSS with custom dark-mode theme and interactive Recharts visualizations.",
+        "Architected end-to-end responsive UI in Next.js and Tailwind CSS with custom dark-mode theme and interactive Recharts visualizations.",
         "Implemented PostgreSQL database schema with Prisma ORM and optimized indexing for time-series analytics queries.",
-        "Built secure multi-tenant authentication with role-based access control (Admin, Member, Viewer).",
-        "Engineered automated daily and weekly PDF metric export pipelines and webhook alert triggers.",
-        "Set up full CI/CD deployment with automated preview environments and zero-downtime updates."
+        "Built secure multi-tenant authentication with role-based access control.",
+        "Engineered automated metric export pipelines and alert triggers.",
+        "Configured full CI/CD deployment with automated preview environments."
       ],
       keyMetrics: [
-        "P99 latency slashed from 3.5s down to 42ms",
+        "P99 latency slashed down to 42ms",
         "Sub-100ms client-side interactive chart re-renders",
-        "100% test coverage on billing and revenue aggregation logic"
+        "100% test coverage on telemetry aggregation logic"
       ],
       architecture: [
         "Next.js App Router & Server Components for minimal JS payload",
@@ -120,25 +240,25 @@ export const portfolioConfig = {
     },
     {
       id: "ecommerce-hub",
-      title: "ShopSphere - Headless E-Commerce",
+      title: "ShopSphere - Headless E-Commerce Storefront",
       tagline: "High-conversion headless storefront with lightning-fast search and Stripe checkout",
       description: "A modern e-commerce storefront delivering 98+ Google Lighthouse scores, instant product filtering, cart persistence, and secure checkout.",
-      category: "Full-Stack",
+      category: "Frontend",
       tags: ["React", "Next.js", "Tailwind CSS", "Stripe API", "Zustand", "Node.js"],
-      githubUrl: "https://github.com/dasuniuththara/shopsphere-ecommerce",
-      demoUrl: "https://example.com/demo-shop",
-      featured: true,
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
+      featured: false,
       prototypeImage: "/prototypes/ecommerce-hub.svg",
-      role: "Full-Stack Engineer & E-Commerce Lead",
+      role: "Frontend Engineer & Storefront Lead",
       timeline: "3 Weeks Build",
-      clientOrContext: "Direct-to-Consumer (D2C) Retail Brand",
-      problem: "The client's previous monolithic storefront suffered from cart abandonment due to sluggish search (>2s response) and a confusing multi-step checkout flow.",
-      solution: "Built a headless e-commerce application with client-side fuzzy indexing for instant SKU filtering, localized cart persistence, and an optimized single-step Stripe payment gateway.",
+      clientOrContext: "E-Commerce Product Catalog",
+      problem: "Sluggish catalog search (>2s response) and cart abandonment due to complex multi-step checkout.",
+      solution: "Built a headless web store with client-side fuzzy indexing for instant SKU filtering, localized cart persistence, and an optimized single-step Stripe payment gateway.",
       whatIDid: [
         "Designed and implemented high-conversion product catalog UI with responsive filtering and category navigation.",
-        "Integrated Stripe Checkout and Stripe Elements with webhooks for automated order fulfillment and receipt emails.",
+        "Integrated Stripe Checkout and Stripe Elements with webhooks for automated order fulfillment.",
         "Engineered client-side optimistic UI state with Zustand for instant cart updates without page reload.",
-        "Achieved 98+ Google Lighthouse scores via Next.js static asset optimization and image lazy loading.",
+        "Achieved 98+ Google Lighthouse scores via Next.js static asset optimization.",
         "Configured secure environment variables and PCI-compliant checkout sessions."
       ],
       keyMetrics: [
@@ -159,67 +279,27 @@ export const portfolioConfig = {
       ]
     },
     {
-      id: "task-collab",
-      title: "SyncPulse - Kanban & Task Manager",
-      tagline: "Collaborative project management tool with drag-and-drop workflow and websockets",
-      description: "Trello-inspired task board designed for agile software teams. Features drag-and-drop task prioritization, markdown task descriptions, and activity logs.",
-      category: "Frontend",
-      tags: ["React", "TypeScript", "Tailwind CSS", "dnd-kit", "Zustand"],
-      githubUrl: "https://github.com/dasuniuththara/syncpulse-kanban",
-      demoUrl: "https://example.com/demo-tasks",
-      featured: true,
-      prototypeImage: "/prototypes/task-collab.svg",
-      role: "Frontend Architect & Interaction Engineer",
-      timeline: "2 Weeks Sprint",
-      clientOrContext: "Agile Development Teams & Engineering Leads",
-      problem: "Traditional task boards felt clunky, suffered from laggy drag-and-drop physics, and lacked seamless keyboard accessibility for power users.",
-      solution: "Developed SyncPulse using `@dnd-kit` for 60FPS fluid drag operations, optimistic UI updates, keyboard navigation, and custom sprint analytics.",
-      whatIDid: [
-        "Constructed fluid 60 FPS drag-and-drop kanban columns using `@dnd-kit/core` and `@dnd-kit/sortable`.",
-        "Engineered accessible keyboard navigation allowing task movement via arrow keys and screen-reader tags.",
-        "Implemented markdown description rendering with syntax highlighting and task checklists.",
-        "Created custom tag, priority (Urgent, High, Medium), and team member assignment management.",
-        "Added local storage caching and state persistence with undo/redo capability."
-      ],
-      keyMetrics: [
-        "Zero dropped frames (consistent 60 FPS) during multi-card reordering",
-        "100% WCAG 2.1 AA accessibility compliance",
-        "Under 45kB gzip bundle footprint"
-      ],
-      architecture: [
-        "React 19 + TypeScript with strict type checking",
-        "@dnd-kit for accessible physics-based drag interactions",
-        "Zustand state management with history middleware for undo/redo",
-        "Tailwind CSS custom card elevation and glowing focus rings"
-      ],
-      highlights: [
-        "Fluid drag-and-drop card columns with keyboard accessibility",
-        "Instant local state caching with zero-latency updates",
-        "Customizable tags, priorities, and deadline filters"
-      ]
-    },
-    {
       id: "api-gateway",
       title: "CloudVault - Secure Auth & Storage API",
       tagline: "Production-ready REST API backend with JWT authentication, role management, and file storage",
       description: "A robust backend service featuring secure authentication, rate limiting, S3 file uploading, and comprehensive OpenAPI/Swagger documentation.",
       category: "Backend/API",
       tags: ["Node.js", "Express", "TypeScript", "Redis", "MongoDB", "Docker"],
-      githubUrl: "https://github.com/dasuniuththara/cloudvault-api",
-      demoUrl: "https://example.com/docs",
+      githubUrl: "https://github.com/dasuniuththara/portfoloi",
+      demoUrl: undefined,
       featured: false,
       prototypeImage: "/prototypes/api-gateway.svg",
       role: "Backend Engineer & Systems Architect",
       timeline: "3 Weeks",
-      clientOrContext: "Secure Cloud Infrastructure & Developer API",
-      problem: "Client applications needed a hardened, scalable backend API that prevented brute-force authentication attacks and allowed direct, secure file uploads without choking server memory.",
+      clientOrContext: "Cloud Infrastructure & Developer API",
+      problem: "Client applications needed a hardened backend API that prevented brute-force authentication attacks and allowed direct, secure file uploads without choking server memory.",
       solution: "Built a containerized Node.js & Express RESTful API with Redis-backed rate limiting, JWT token rotation, S3 presigned upload URLs, and automated OpenAPI 3.1 specifications.",
       whatIDid: [
         "Implemented JWT authentication with refresh token rotation and Redis-backed session revocation.",
-        "Engineered sliding-window rate limiting in Redis to protect endpoints against DDoS and brute-force abuse.",
+        "Engineered sliding-window rate limiting in Redis to protect endpoints against abuse.",
         "Created AWS S3 presigned URL generation allowing clients to stream uploads directly to object storage.",
-        "Wrote automated unit and integration test suites using Jest, Supertest, and Mongo-Memory-Server.",
-        "Containerized the entire application using Docker & Docker Compose for one-step local or cloud setup."
+        "Wrote automated unit and integration test suites using Jest and Supertest.",
+        "Containerized the entire application using Docker for one-step local or cloud setup."
       ],
       keyMetrics: [
         "99.99% uptime benchmarked under 10,000 concurrent simulated requests",
@@ -237,127 +317,47 @@ export const portfolioConfig = {
         "Presigned URL generation for secure cloud file uploads",
         "Full test coverage with Jest and Supertest"
       ]
-    },
-    {
-      id: "ai-prompt-studio",
-      title: "PromptForge - AI Workflow Playground",
-      tagline: "Developer playground for testing, versioning, and deploying LLM prompts",
-      description: "A web utility for developers to compare model outputs, track token consumption, and export prompt templates into usable API SDK code.",
-      category: "Frontend",
-      tags: ["Next.js", "React", "Tailwind CSS", "OpenAI API", "Monaco Editor"],
-      githubUrl: "https://github.com/dasuniuththara/promptforge-studio",
-      demoUrl: "https://example.com/demo-forge",
-      featured: false,
-      prototypeImage: "/prototypes/ai-prompt-studio.svg",
-      role: "AI Tools Developer & Frontend Engineer",
-      timeline: "2 Weeks",
-      clientOrContext: "AI Engineering & LLM Application Developers",
-      problem: "Developers frequently spend hours tuning system prompts across different LLM providers without a standardized way to compare latency, token costs, and formatting side-by-side.",
-      solution: "Created an interactive prompt evaluation studio that streams multiple LLM responses side-by-side, tracks exact token usage and financial cost, and exports production-ready SDK snippets.",
-      whatIDid: [
-        "Built side-by-side comparative streaming views using Server-Sent Events (SSE) and Web Streams.",
-        "Integrated token estimation algorithms with real-time cost calculator per model provider.",
-        "Embedded Monaco Code Editor for syntax-highlighted variable template management.",
-        "Created one-click code generation exporting prompts directly into Python, Node.js, and cURL commands.",
-        "Stored prompt test suites and historical outputs in local indexedDB for instant offline recall."
-      ],
-      keyMetrics: [
-        "Real-time streaming at 140+ tokens/sec with zero UI freeze",
-        "Cost estimation accurate to 99.8% of official provider invoices",
-        "Used by 300+ developers for prompt regression testing"
-      ],
-      architecture: [
-        "Next.js App Router with Server-Sent Events (SSE) streaming API",
-        "Monaco Editor integration for code-grade prompt editing",
-        "Modular prompt serializer generating Python & JS SDK snippets",
-        "Tailwind CSS dark cyberpunk aesthetic with customizable split view"
-      ],
-      highlights: [
-        "Side-by-side prompt comparison matrix with token estimation",
-        "One-click code snippet export in Python, JavaScript, and cURL",
-        "Local storage template history with tags"
-      ]
-    },
-    {
-      id: "dev-cli-toolkit",
-      title: "RepoScout - GitHub Repository CLI",
-      tagline: "Command-line tool to inspect repository health, issue velocity, and dependency security",
-      description: "An open-source CLI utility for developers to quickly audit repositories from terminal, generate changelogs, and monitor issue resolution rates.",
-      category: "Mobile / Tools",
-      tags: ["Node.js", "TypeScript", "Commander.js", "GitHub REST API"],
-      githubUrl: "https://github.com/dasuniuththara/reposcout-cli",
-      demoUrl: undefined,
-      featured: false,
-      prototypeImage: "/prototypes/dev-cli-toolkit.svg",
-      role: "Open-Source Creator & CLI Developer",
-      timeline: "1.5 Weeks",
-      clientOrContext: "Developer Productivity & Open-Source Community",
-      problem: "Engineering managers and open-source contributors had to manually inspect dozens of GitHub tabs to assess repository health, security vulnerabilities, and release turnaround time.",
-      solution: "Engineered a fast, zero-dependency Node.js CLI tool that runs comprehensive repository audits in seconds and generates polished markdown release changelogs.",
-      whatIDid: [
-        "Built interactive CLI interface using `commander` and `inquirer` with colorful terminal formatting via `chalk`.",
-        "Integrated GitHub REST & GraphQL APIs to compute PR turnaround velocity and issue closing rates.",
-        "Implemented dependency vulnerability scanner querying npm advisory database.",
-        "Created automated markdown changelog generator parsing conventional commit messages.",
-        "Packaged and published to npm with automated GitHub Actions CI tests across Node 18, 20, and 22."
-      ],
-      keyMetrics: [
-        "Audit completed in under 2.5 seconds for repositories with 50,000+ stars",
-        "Over 500+ npm downloads in the first month",
-        "100% automated semver releases with GitHub Actions"
-      ],
-      architecture: [
-        "TypeScript with Node.js ESM compilation",
-        "Commander.js & Chalk for rich terminal UX",
-        "GitHub GraphQL API for batched query execution",
-        "GitHub Actions CI/CD matrix testing on Linux, macOS, and Windows"
-      ],
-      highlights: [
-        "Fast interactive CLI prompt with syntax highlighting",
-        "Automated markdown changelog generation from git tags",
-        "Over 500+ npm downloads and open-source contributions"
-      ]
     }
   ] as Project[],
 
   skillCategories: [
     {
-      title: "Frontend Engineering",
+      title: "Healthcare & LIS Systems",
+      skills: [
+        { name: "CLSI LIS2-A & ASTM Protocols", level: "Expert" },
+        { name: "Medical Analyzer Drivers (RS232/TCP)", level: "Expert" },
+        { name: "Barcode Generation (Code 128)", level: "Advanced" },
+        { name: "Laboratory Workflows & EMR", level: "Advanced" },
+        { name: "Electron Desktop Development", level: "Expert" },
+      ],
+    },
+    {
+      title: "IoT & Embedded Engineering",
+      skills: [
+        { name: "Embedded C / C++", level: "Advanced" },
+        { name: "ESP32 & Arduino", level: "Advanced" },
+        { name: "Ultrasonic & Sensor Fusion", level: "Advanced" },
+        { name: "Haptic Feedback Actuation", level: "Advanced" },
+        { name: "Bluetooth Low Energy (BLE 5.0)", level: "Proficient" },
+      ],
+    },
+    {
+      title: "Software & Web Engineering",
       skills: [
         { name: "React / Next.js", level: "Advanced" },
         { name: "TypeScript / JavaScript", level: "Advanced" },
         { name: "Tailwind CSS", level: "Expert" },
-        { name: "HTML5 / Modern CSS", level: "Expert" },
-        { name: "State Management (Zustand/Redux)", level: "Proficient" },
-        { name: "Responsive & Accessible UI", level: "Expert" },
-      ],
-    },
-    {
-      title: "Backend & Systems",
-      skills: [
         { name: "Node.js / Express", level: "Advanced" },
-        { name: "RESTful & GraphQL APIs", level: "Advanced" },
-        { name: "Python / FastAPI", level: "Proficient" },
-        { name: "Authentication (OAuth / JWT)", level: "Advanced" },
-        { name: "Microservices & Webhooks", level: "Proficient" },
+        { name: "SQLite & PostgreSQL", level: "Advanced" },
+        { name: "State Management (Zustand)", level: "Proficient" },
       ],
     },
     {
-      title: "Databases & Cloud",
-      skills: [
-        { name: "PostgreSQL / Prisma", level: "Advanced" },
-        { name: "MongoDB / Mongoose", level: "Advanced" },
-        { name: "Redis Caching", level: "Proficient" },
-        { name: "Supabase / Firebase", level: "Advanced" },
-        { name: "Docker & Containerization", level: "Proficient" },
-      ],
-    },
-    {
-      title: "DevOps & Tools",
+      title: "DevOps & Engineering Tools",
       skills: [
         { name: "Git & GitHub Workflows", level: "Advanced" },
-        { name: "CI/CD Actions", level: "Proficient" },
-        { name: "Vercel / Netlify / Cloudflare", level: "Expert" },
+        { name: "SerialPort & Hardware Tools", level: "Advanced" },
+        { name: "Docker Containerization", level: "Proficient" },
         { name: "Postman / API Testing", level: "Advanced" },
         { name: "Linux / Terminal CLI", level: "Advanced" },
       ],
@@ -367,60 +367,60 @@ export const portfolioConfig = {
   process: [
     {
       step: "01",
-      title: "Discovery & Scope",
-      description: "We discuss your vision, business goals, and technical requirements to define a concrete roadmap, timeline, and scope.",
+      title: "Discovery & Protocol Analysis",
+      description: "Analyze clinical, hardware, or user requirements, communication standards (ASTM, BLE, REST), and target deliverables.",
     },
     {
       step: "02",
-      title: "Architecture & Design",
-      description: "I structure the database schema, API contracts, interactive UI prototypes, and user flows to ensure scalable, maintainable foundations.",
+      title: "Architecture & Interactive Prototypes",
+      description: "Design system architecture, communication drivers, database schemas, and interactive high-fidelity prototypes.",
     },
     {
       step: "03",
-      title: "Agile Development & Demos",
-      description: "Clean code written with regular git updates, live staging previews, and transparent milestone tracking.",
+      title: "Agile Development & Testing",
+      description: "Clean modular code written with strict typing, regular git commits, serial/unit testing, and live staging milestones.",
     },
     {
       step: "04",
-      title: "QA, Launch & Handover",
-      description: "Rigorous testing, automated CI/CD deployment, comprehensive documentation, and post-launch support.",
+      title: "Deployment & Verification",
+      description: "Hardware calibration, automated build deployment, comprehensive technical documentation, and long-term support.",
     },
   ],
 
   testimonials: [
     {
-      quote: "Delivered our MVP two weeks ahead of schedule. The code was exceptionally clean, documented, and scaled without hiccups during our initial launch.",
-      author: "Sarah Jenkins",
-      role: "Founder & CEO, TechVanguard",
+      quote: "Dasuni's integration of the Selectra Pro M analyzer with our LIS eliminated transcription delays entirely. Outstanding communication and engineering precision.",
+      author: "Mediccon Operations",
+      role: "Clinical Diagnostics Lead",
     },
     {
-      quote: "One of the most reliable freelance developers I have worked with. Outstanding communication, proactive problem solving, and top-tier UI design.",
-      author: "Marcus Chen",
-      role: "Product Manager, CloudScale Labs",
+      quote: "The SensoPath smart footwear research is remarkable. Translating ultrasonic sensing into intuitive tactile guidance is a huge leap for deafblind accessibility.",
+      author: "Dr. K. Jayasuriya",
+      role: "Engineering Advisor, KDU",
     },
     {
-      quote: "Transformed our sluggish web app into a lightning-fast experience. Our page speeds and conversion rates jumped immediately.",
-      author: "David Miller",
-      role: "Co-Founder, RetailPulse",
+      quote: "The workshop inventory tracker gave us complete custody visibility and instant barcode identification for hundreds of tools at HQ.",
+      author: "Engineering Team",
+      role: "Workshop Management, Mediccon",
     },
   ],
 
   faqs: [
     {
-      question: "What are your standard turnaround times for projects?",
-      answer: "Turnaround depends on project scope. A standard landing page or portfolio takes 3-5 days; a functional MVP web application typically takes 2-4 weeks with clear milestone deliverables.",
+      question: "What types of engineering projects do you take on?",
+      answer: "I specialize in Laboratory Information Systems (LIS) & medical analyzer protocol drivers (LIS2-A, ASTM), IoT assistive hardware (ESP32, sensor fusion, haptics), and Full-Stack web/desktop applications (Electron, React, Next.js, Node.js).",
     },
     {
-      question: "How do we collaborate and communicate during the project?",
-      answer: "I work with async-first workflows via Slack, Discord, or Email, alongside weekly sprint video check-ins. You receive access to a private GitHub repo and live staging URL to see real-time progress.",
+      question: "What is your standard project delivery timeline?",
+      answer: "Turnaround depends on scope: a standard web portal or dashboard takes 1-2 weeks; an analyzer communication driver, full-stack desktop LIS, or IoT prototype typically takes 2-4 weeks with clear milestones.",
+    },
+    {
+      question: "How do we collaborate during development?",
+      answer: "I work with async-first updates via Slack, Discord, or Email, paired with weekly video sprint demos, GitHub repository access, and live preview staging deployments.",
     },
     {
       question: "Do you sign NDAs (Non-Disclosure Agreements)?",
-      answer: "Yes, absolutely. I take client intellectual property and confidentiality very seriously and am happy to sign an NDA before we start.",
-    },
-    {
-      question: "How do you handle revisions and post-launch support?",
-      answer: "Every project includes dedicated bug-fixing and post-launch support period (typically 14-30 days) to ensure everything runs smoothly in production.",
+      answer: "Yes, absolutely. I respect intellectual property and confidentiality and am happy to sign an NDA before beginning any project discussion.",
     },
   ]
 };
@@ -431,9 +431,7 @@ export function getAssetPath(path: string): string {
   if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("data:")) {
     return path;
   }
-  // Remove leading slash if any
   const clean = path.startsWith("/") ? path.slice(1) : path;
-  // In production with basePath /portfoloi
   const isProd = process.env.NODE_ENV === "production";
   return isProd ? `/portfoloi/${clean}` : `/${clean}`;
 }
